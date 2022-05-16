@@ -64,15 +64,18 @@ export class CreateUserComponent implements OnInit {
 
   emailVerification()
   { 
-    this.emailAlreadyExists = false;
-    var compteur = 0;
-    for(var i=0; i<this.users.length; i++)
+    if(this.users != null) 
     {
-        if(this.newUser.value.email == this.users[i].email && compteur != 1)
-        {
-          this.emailAlreadyExists = true;
-          compteur = 1 ;
-        }
+      this.emailAlreadyExists = false;
+      var compteur = 0;
+      for(var i=0; i<this.users.length; i++)
+      {
+          if(this.newUser.value.email == this.users[i].email && compteur != 1)
+          {
+            this.emailAlreadyExists = true;
+            compteur = 1 ;
+          }
+      }
     }
   }
 
