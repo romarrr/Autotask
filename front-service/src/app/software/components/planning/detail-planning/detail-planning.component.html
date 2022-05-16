@@ -11,16 +11,23 @@
             </div>
 
             <div class="row justify-content-between px-5">
-            <mat-card class="col-3 m-3" *ngFor="let todo of planning.todos">
-                <h2>{{ todo.name }}</h2>
-                <ul>
-                    <li>{{ todo.description }}</li>
-                    <li>{{ todo.time }} minutes</li>
-                    <li>{{ todo.status }}</li>
-                    <li>{{ todo.skill.specializationname }} - {{ todo.skill.experiencename }}</li>
-                    <li>{{ todo.user.lastname }} {{ todo.user.firstname }}</li>
-                </ul>   
-            </mat-card>
+        
+                <mat-accordion *ngFor="let todo of planning.todos">
+                    <mat-expansion-panel hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title class="col-6">
+                          {{todo.name}}
+                        </mat-panel-title>
+                        <mat-panel-description class="col-6">
+                          {{todo.user.lastname}} {{todo.user.firstname}} 
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <p>{{ todo.description }}</p>
+                      <p>{{ todo.skill.specializationname }} - Niveau {{ todo.skill.experiencename }}</p>
+                      <p>{{ todo.time }} minutes</p>
+                    </mat-expansion-panel>
+                </mat-accordion>
+       
         </div>
         <img class="col-5 image"> 
 
@@ -29,7 +36,7 @@
 </mat-card>
 
 <div class="detailbuttons row justify-content-around mx-auto my-5">   
-    <button class="col-2 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/planning/update/', planning.id]">Mettre à jour</button>
+    <button class="col-2 updatebutton text-white text-uppercase pt-1" mat-button (click)="openVerif(planningUpdate)">Mettre à jour</button>
     <button class="col-2 bg-danger text-white pt-1" mat-button (click)="openVerif(verif)">SUPPRIMER</button>              
 </div>
 
@@ -43,5 +50,19 @@
     <div class="row justify-content-around mx-0 modal-footer">
         <button class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
         <button class="col-3 bg-danger text-white pt-1" mat-button (click)="deletePlanningById(planning.id); showDeletePlanningToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>
+
+<ng-template #planningUpdate let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Validation</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment mettre à jour ce devis "<span class="fw-bold text-uppercase">{{ planning.name }}</span>" ?</h4>
+        <p>Les tâches provenant des devis récemment acceptés vont être ajoutées à ce planning.</p>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button type="button" class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button type="button" ngbAutofocus class="col-3 updatebutton text-white pt-1" mat-button (click)="updatePlanningById(planning.id); showUpdatePlanningToast(); redirection(); modal.close();">VALIDER</button>
     </div>
 </ng-template>

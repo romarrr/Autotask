@@ -55,7 +55,7 @@ export class UpdatePlanningComponent implements OnInit {
     else
     {
       this.updatePlanning.value.name = this.updatePlanning.value.name.toUpperCase();
-      this.planningService.updatePlanningByRoleAndById(this.planning.id, this.planning.role, this.updatePlanning.value).subscribe();
+      this.planningService.updatePlanningByRoleAndById(this.planning.id, this.updatePlanning.value).subscribe();
       this.showToast();
       this.redirection(); 
     }

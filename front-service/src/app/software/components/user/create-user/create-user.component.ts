@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NbComponentStatus, NbToastrService } from '@nebular/theme';
+import { User } from '../../../models/user';
 import { Skill } from '../../../models/skill';
 import { UserService } from '../../../services/user.service';
 
@@ -30,10 +31,17 @@ export class CreateUserComponent implements OnInit {
 
   selected!: string;
 
+  users: User[] = [];
+
+  emailAlreadyExists = false;
+
+  emailUsers: string[] = [];
+
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private toastrService: NbToastrService) { }
 
   ngOnInit(): void {
     this.skills = this.route.snapshot.data['skills'];
+    this.users = this.route.snapshot.data['users'];
     this.skillsSorted = this.skills.sort((a, b) => a.specializationname> b.specializationname? 1 : -1);
     this.newUser = this.createFormGroup();
   }
@@ -54,13 +62,28 @@ export class CreateUserComponent implements OnInit {
     })
   }
 
+  emailVerification()
+  { 
+    this.emailAlreadyExists = false;
+    var compteur = 0;
+    for(var i=0; i<this.users.length; i++)
+    {
+        if(this.newUser.value.email == this.users[i].email && compteur != 1)
+        {
+          this.emailAlreadyExists = true;
+          compteur = 1 ;
+        }
+    }
+  }
+
   get formControls(): { [key: string]: AbstractControl } {
     return this.newUser.controls;
   }
 
   post(){
     this.submitted = true;
-    if (this.newUser.invalid) {
+    this.emailVerification();
+    if (this.newUser.invalid || this.emailAlreadyExists == true) {
         return;
     }
     else

@@ -83,6 +83,9 @@
                 <mat-error class="text-end" *ngIf="submitted && formControls['email'].errors">
                     E-mail nécessaire
                 </mat-error>
+                <mat-error class="text-end" *ngIf="emailAlreadyExists">
+                    E-mail déjà existant
+                </mat-error>
 
                 <mat-form-field appearance="standard" class="form-group col-12">
                     <mat-label>Compétences</mat-label>

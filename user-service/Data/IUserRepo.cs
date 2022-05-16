@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UserService.Models;
 
 namespace UserService.Data 
@@ -14,6 +13,5 @@ namespace UserService.Data
         Task CreateUser(User user);
         Task<User> UpdateUserById(string id, User user);
         Task DeleteUserById(string id);
-        bool VerifyUserByEmail(string email);
     }
 }

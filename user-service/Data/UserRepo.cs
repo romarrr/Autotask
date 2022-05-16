@@ -97,18 +97,5 @@ namespace UserService.Data
             await _context.user.DeleteOneAsync(c => c.Id == id);
         }
 
-        public bool VerifyUserByEmail(string email)
-        {
-            var userEmail = _context.user.Find(c => c.Email == email).SingleOrDefaultAsync();
-
-            if(userEmail != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }

@@ -64,46 +64,45 @@ namespace UserService.Controllers
         {
             var userModel = _mapper.Map<User>(createUser);
 
-            // var mail = _repository.VerifyUserByEmail(userModel.Email);
+            var mail = _repository.GetUserByEmail(userModel.Email);
 
-            // if (mail == true)
-            // {
-            //     Console.WriteLine("Un compte utilisant cet e-mail est déjà existant.");
-            //     return NotFound("E-mail déjà existant.");
-            // }
-            // else
-            // {
-
-            var skillList = new List<Skill>();
-
-            for(var i=0; i < userModel.Skillsid.Length; i++)
+            if(mail == null)
             {
-                var getSkill = await _httpClient.GetAsync("http://localhost:9000/skill/" + userModel.Skillsid[i]);
-
-                var deserializedSkill = JsonConvert.DeserializeObject<Skill>(
-                    await getSkill.Content.ReadAsStringAsync());
-
-                var skillModel = _mapper.Map<Skill>(deserializedSkill);
-
-                var newSkill = new Skill();
-                newSkill.Id = userModel.Skillsid[i];
-                newSkill.Specializationname = skillModel.Specializationname;
-                newSkill.Experiencename = skillModel.Experiencename;
-                skillList.Add(newSkill);
+                Console.WriteLine("Un compte utilisant cet e-mail est déjà existant.");
+                return NotFound("E-mail déjà existant.");
             }
-            userModel.skills = skillList;
-
-            if(userModel.Photo == "")
+            else
             {
-                userModel.Photo = "https://i.goopics.net/71ddmo.png";
+                var skillList = new List<Skill>();
+
+                for(var i=0; i < userModel.Skillsid.Length; i++)
+                {
+                    var getSkill = await _httpClient.GetAsync("http://localhost:9000/skill/" + userModel.Skillsid[i]);
+
+                    var deserializedSkill = JsonConvert.DeserializeObject<Skill>(
+                        await getSkill.Content.ReadAsStringAsync());
+
+                    var skillModel = _mapper.Map<Skill>(deserializedSkill);
+
+                    var newSkill = new Skill();
+                    newSkill.Id = userModel.Skillsid[i];
+                    newSkill.Specializationname = skillModel.Specializationname;
+                    newSkill.Experiencename = skillModel.Experiencename;
+                    skillList.Add(newSkill);
+                }
+                userModel.skills = skillList;
+
+                if(userModel.Photo == "")
+                {
+                    userModel.Photo = "https://i.goopics.net/71ddmo.png";
+                }
+
+                await _repository.CreateUser(userModel);
+
+                var readUserDto = _mapper.Map<ReadUserDto>(userModel);
+
+                return CreatedAtRoute(nameof(GetUserById), new { Id = readUserDto.Id }, readUserDto);
             }
-
-            await _repository.CreateUser(userModel);
-
-            var readUserDto = _mapper.Map<ReadUserDto>(userModel);
-
-            return CreatedAtRoute(nameof(GetUserById), new { Id = readUserDto.Id }, readUserDto);
-            // }
         } 
 
         [HttpPut("{id}", Name = "UpdateUserById")]

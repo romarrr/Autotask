@@ -35,12 +35,11 @@ export class PlanningService {
     return this.http.post<Planning>("https://localhost:2001/planning/" + role, planning);
   }
 
-  updatePlanningByRoleAndById(id: string, role: string, updateFromData: any): Observable<Planning>
+  updatePlanningByRoleAndById(id: string, updateFromData: any): Observable<Planning>
   {
-    return this.http.put<Planning>("https://localhost:2001/planning/" + role + "/" + id, updateFromData);
+    return this.http.put<Planning>("https://localhost:2001/planning/" + id, updateFromData);
   }
   
-
   deletePlanningById(id: string): Observable<Planning>
   {
     let planningDelete = "https://localhost:2001/planning/" + id;

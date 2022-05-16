@@ -24,6 +24,11 @@ export class DetailPlanningComponent implements OnInit {
     this.planning = this.route.snapshot.data['planning'];
   }
 
+  updatePlanningById(id: string)
+  {
+    this.planningService.updatePlanningByRoleAndById(id, this.planning).subscribe();
+  }
+
   deletePlanningById(id: string)
   {
     this.planningService.deletePlanningById(id).subscribe(); 
@@ -41,6 +46,12 @@ export class DetailPlanningComponent implements OnInit {
     const config: NbIconConfig = { status: 'danger', icon: 'trash-2-outline', pack: 'eva' };
     var planningname = this.planning.name.toUpperCase();
     this.toastrService.show('Le planning ' + planningname + ' a été supprimé.', `Planning supprimé`,  config);
+  }
+
+  showUpdatePlanningToast() {
+    const config: NbIconConfig = { status: 'success', icon: 'checkmark-outline', pack: 'eva' };
+    var quotename = this.planning.name.toUpperCase();
+    this.toastrService.show('Le planning ' + quotename + ' a été mis à jour.', `Planning modifié`,  config);
   }
 
 }
