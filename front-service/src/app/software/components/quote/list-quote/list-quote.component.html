@@ -1,0 +1,25 @@
+<div class="col-2 mx-auto">
+    <input type="text" class="form-control text-center search" placeholder="Nom du devis" [(ngModel)]="searchTerm">  
+</div>
+
+<div class="row justify-content-around mt-5 mx-5">
+
+    <mat-card class="quotecard col-3 mb-5 mx-3" *ngFor="let quote of quotes | quoteFilter:searchTerm" [routerLink]="['/quote/detail', quote.id]">
+
+        <div class="row justify-content-around">
+            <div class="col-7">       
+                <p class="text-uppercase name">{{ quote.name }}</p>
+                <p>{{ quote.templatename }}</p>
+                <p>{{ quote.client.company }}</p> 
+                <p>{{ quote.client.lastname }} {{ quote.client.firstname }}</p>   
+            </div>
+
+            <div class="image-ronde-bg col-5 my-auto"
+                style="background-image: url({{quote.logo}})">  
+            </div>
+           
+        </div>
+    
+    </mat-card>  
+
+</div>

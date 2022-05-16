@@ -1,0 +1,67 @@
+@use '../../../themes.scss' as *;
+
+.logo {
+    height: 65px;
+    margin-top: -10px;
+}
+
+.darkmode {
+  font-family: nb-theme(font-family-primary);
+}
+
+.menu-title {
+  color: #1f75b6 !important;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #000000;  
+}
+  
+.hover-underline-animation:after {
+  content: '';
+  margin-bottom: 43px;
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom;  
+}
+
+.active {
+  text-decoration: underline #0087ca 2px;
+  text-underline-offset: 7px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu-user {
+  min-width: 12rem;
+}
+
+.dropdown-menu {
+  background-color: nb-theme(background-dropdown-menu);
+  border-radius: 0px 0px 3px 3px;
+  border-top: 1px solid nb-theme(background-dropdown-menu);
+  transform: translateY(-27%);
+}
+
+.dropdown-item {
+  color: nb-theme(text-color-dropdown-item);
+}
+
+.switch {
+  display: inline-block;
+}

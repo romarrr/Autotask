@@ -1,0 +1,46 @@
+<form [formGroup]="newPlanning" (ngSubmit)="post()" novalidate>
+
+    <mat-card class="planning mx-auto mt-5 py-4">
+
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Nouveau Planning</h2>
+        </div>
+       
+        <div class="row justify-content-around align-items-center">
+
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>                   
+                    <input matInput formControlName="name" type="text" class="form-control">
+                    <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['name'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Pour quel rôle ?</mat-label>
+                    <mat-select formControlName="role">              
+                        <mat-option *ngFor="let role of roles" [value]="role"><span class="text-uppercase">{{ role }}</span></mat-option>                
+                    </mat-select>
+                </mat-form-field>  
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['role'].errors">
+                    Rôle nécessaire
+                </mat-error>
+
+            </div>
+
+            <div class="col-5 image-ronde-bg" style="background-image: url('https://iconarchive.com/download/i18421/iconshock/free-folder/folder-customer.ico')"></div>  
+        
+        </div>
+
+    </mat-card>
+    
+    <div class="row my-5">     
+            <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

@@ -1,0 +1,51 @@
+@use '../../../../../themes.scss' as *;
+
+.template {
+    width: 75%;
+    background-color: nb-theme(background-mat-card);
+}
+
+h2, input, textarea, button, mat-label, mat-option, mat-select, mat-error {
+    font-family: nb-theme(font-family-primary);
+}
+
+.image {
+    width : 250px; 
+}
+
+.title { 
+    width: 25%;
+    background-color: nb-theme(background-mat-card);
+    margin-bottom: -80px;
+    transform: translateY(-70%);
+    border-radius : 5px;
+}
+
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: grey !important;
+}
+
+::ng-deep .mat-focused .input {
+    background-color: red;
+}
+
+input, .mat-focused input, textarea, .mat-focused textarea, mat-select, mat-option {
+    color: nb-theme(mat-form-field-input) !important;
+    background-color: nb-theme(mat-form-field-background-input);
+}
+
+::ng-deep .mat-form-field-label, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow, ::ng-deep .mat-option-pseudo-checkbox {
+    /*change color of label*/
+    color: nb-theme(mat-form-field-label);
+}
+
+::ng-deep .mat-form-field-ripple, ::ng-deep .mat-form-field-underline {
+     /*change color of underline when focused*/
+    background-color: nb-theme(mat-form-field-label) !important;
+}
+
+mat-option.mat-selected {
+    color: #1f75b6 !important;
+    background-color: nb-theme(mat-form-field-background-input) !important;
+}

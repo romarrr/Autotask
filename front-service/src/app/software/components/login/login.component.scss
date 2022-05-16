@@ -1,0 +1,45 @@
+@use '../../../../themes.scss' as *;
+
+#logoautotask { 
+    width: 300px;
+}
+
+#chargement {
+    width: 60px;
+    position: absolute;
+}
+
+.login {
+    margin-top: 30vh;
+    transform: translateY(-30%);
+}
+
+.autotask {
+    color: #1f75b6;
+    font-size:75px;
+}
+
+.validbutton, mat-label{
+    font-family: nb-theme(font-family-primary);
+}
+
+.validbutton {
+    color: white;
+    background-color: #1f75b6;
+}
+
+h2, h3, h4 {
+    font-family: nb-theme(font-family-primary);
+}
+
+.firstname {
+    color:rgb(8, 83, 247);
+}
+
+.msgGood, .msgError {
+    position: absolute;
+}
+
+.incorrectMsg {
+    color: rgb(195, 0, 0);
+}

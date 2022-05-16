@@ -1,0 +1,13 @@
+<div class="row justify-content-around mt-5 mx-5">
+
+    <mat-card class="planningcard col-3 mb-5 mx-3" *ngFor="let planning of plannings" [routerLink]="['/planning/detail', planning.id]">
+
+        <div class="row justify-content-around">
+                  
+                <h2 class="text-uppercase text-center name my-auto">{{ planning.name }}</h2>
+          
+        </div>
+    
+    </mat-card>  
+
+</div>

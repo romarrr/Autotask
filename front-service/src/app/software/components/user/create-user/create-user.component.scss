@@ -1,0 +1,56 @@
+@use '../../../../../themes.scss' as *;
+
+.user {
+    width: 75%;
+    background-color: nb-theme(background-mat-card);
+}
+
+h2, input, button, mat-label, mat-error, mat-option, mat-select {
+    font-family: nb-theme(font-family-primary);
+}
+
+.image-ronde-bg{
+    background-size : cover;
+    background-position : 50% 50%; 
+    width : 250px; 
+    height : 250px;
+    -moz-border-radius : 125px;
+    -webkit-border-radius : 125px; 
+    border-radius : 125px;
+}
+
+.title { 
+    width: 25%;
+    background-color: nb-theme(background-mat-card);
+    margin-bottom: -80px;
+    transform: translateY(-70%);
+    border-radius : 5px;
+}
+
+input, .mat-focused input {
+    color: nb-theme(mat-form-field-input);
+    background-color: nb-theme(mat-form-field-background-input);
+}
+
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: nb-theme(mat-form-field-label);
+}
+
+::ng-deep .mat-form-field-underline {
+     /*change color of underline*/
+    background-color: nb-theme(mat-form-field-label) !important;
+} 
+
+::ng-deep .mat-form-field-ripple {
+     /*change color of underline when focused*/
+    background-color: nb-theme(mat-form-field-label) !important;
+}
+
+::ng-deep .mat-pseudo-checkbox {
+    margin-bottom: 5px !important;
+}
+
+.name {
+    color: red;
+}

@@ -1,0 +1,52 @@
+<!-- <div class="row justify-content-around mx-5 mb-5">
+    <div class="col-3">
+        <h1>Bienvenue sur AutoTask</h1>
+        <p>L'appli qui automatise votre entreprise</p>
+    </div>
+    <div class="col-3">
+    </div>
+    <div class="col-3">
+    </div>
+</div> -->
+<!-- logo client = https://i.goopics.net/ej72i3.png -->
+<div class="row justify-content-around mx-5 my-5 pt-5">
+
+    <mat-card class="homecard col-3 text-center" routerLink="/client">
+        <img class="icon image mx-auto" src='https://iconarchive.com/download/i18421/iconshock/free-folder/folder-customer.ico'>
+        <h1 class="title">Clients</h1>
+        <h2><span class="definition">Nombre de clients <span class="twopoints">: </span></span><span class="number">{{ clients.length }}</span></h2> 
+    </mat-card>
+
+    <mat-card class="homecard col-3 text-center" routerLink="/user">
+        <img class="icon image mx-auto" src='https://i.goopics.net/71ddmo.png'>
+        <h1 class="title">Utilisateurs</h1>
+        <h2><span class="definition">Nombre d'utilisateurs <span class="twopoints">: </span></span><span class="number">{{ users.length }}</span></h2> 
+    </mat-card>
+    
+    <mat-card class="homecard col-3 text-center"routerLink="/project">
+        <img class="icon image mx-auto" src='https://iconarchive.com/download/i18420/iconshock/free-folder/folder-images.ico'>
+        <h1 class="title">Projets</h1>
+        <h2><span class="definition">Nombre de projets <span class="twopoints">: </span></span><span class="number">{{ projects.length }}</span></h2> 
+    </mat-card>
+
+</div>
+
+<div class="row justify-content-around mx-5 mb-5 py-5">
+    <mat-card class="homecard col-3 text-center" routerLink="/template">
+        <img class="icon image mx-auto icontemplate" src='https://icons.iconarchive.com/icons/iconshock/free-folder/256/folder-vectors-icon.png'>
+        <h1 class="title">Modèles</h1>
+        <h2><span class="definition">Nombre de modèles <span class="twopoints">: </span></span><span class="number">{{ templates.length }}</span></h2> 
+    </mat-card>
+
+    <mat-card class="homecard col-3 text-center" routerLink="/todo">
+        <img class="icon image mx-auto" src='https://iconarchive.com/download/i18422/iconshock/free-folder/folder-documents.ico'>
+        <h1 class="title">Tâches</h1>
+        <h2><span class="definition">Nombre de tâches <span class="twopoints">: </span></span><span class="number">{{ todos.length }}</span></h2> 
+    </mat-card>
+
+    <mat-card class="homecard col-3 text-center" routerLink="/infos">
+        <img class="icon image mx-auto" src='https://findicons.com/files/icons/990/vistaico_toolbar/256/symbol_information.png'>
+        <h1 class="title">Informations détaillées</h1>
+    </mat-card>
+
+</div>

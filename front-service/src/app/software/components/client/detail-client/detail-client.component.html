@@ -1,0 +1,50 @@
+<mat-card class="client mx-auto mt-5">
+
+    <div class="title row mx-auto p-3">
+        <h2 class="text-center">Détail client</h2>
+    </div>
+
+    <div class="row justify-content-around align-items-center">
+
+        <div class="col-7">
+
+            <div>
+                <h2><span class="text-uppercase lastname">{{ client.lastname }}</span> <span class="text-capitalize firstname"> {{ client.firstname }}</span></h2>
+            </div>
+
+            <div>
+                <p>Société :<span class="infos"> {{ client.company }}</span></p>
+                <p>E-mail :<span class="infos"> {{ client.email }}</span></p>
+                <p>Téléphone :<span class="infos"> {{ client.phone }}</span></p>
+                <p>Adresse :<span class="infos"> {{ client.address }} {{ client.postalcode }} {{ client.town }}</span></p>
+                <p>Nombre de projets réalisés pour ce client :<span class="infos"> {{ projects.length }}</span></p>
+                <p>Nombre de projets en attente pour ce client :</p>
+            </div>
+
+        </div>
+
+        <div class="col-5 image-ronde-bg"    
+            style="background-image: url({{client.logo}})">                    
+        </div>
+
+    </div>
+
+</mat-card>
+
+<div class="detailbuttons row justify-content-around mx-auto my-5">    
+    <button class="col-3 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/client/update/', client.id]">Mettre à jour</button>
+    <button class="col-3 bg-danger text-white pt-1" mat-button (click)="openVerif(verif)">SUPPRIMER</button>            
+</div>
+
+<ng-template #verif let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Suppression</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment supprimer le client "<span class="fw-bold"><span class="text-uppercase">{{ client.lastname }}</span> {{ client.firstname }}</span>" ?</h4>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button type="button" class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button type="button" class="col-3 bg-danger text-white pt-1" mat-button (click)="deleteClientById(client.id); showToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>

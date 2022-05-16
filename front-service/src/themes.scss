@@ -1,0 +1,63 @@
+@forward '@nebular/theme/styles/theming';
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/default';
+@use '@nebular/theme/styles/themes/dark';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+  font-family: "Danbury";
+  src: url("../../media/fonts/danbury_caps/DanburyCaps_PERSONAL_USE_ONLY.otf") format("opentype"),
+       url("../../media/fonts/danbury_caps/DanburySmall_PERSONAL_USE_ONLY.otf") format("opentype");
+}
+@font-face {
+font-family: "Davenvale";
+src: url("../../media/fonts/davenvale/Davenvale.otf") format("opentype")
+}
+@font-face {
+font-family: "Doctorglitch";
+src: url("../../media/fonts/doctor_glitch/DoctorGlitch.otf") format("opentype")
+}
+@font-face {
+font-family: "Lightbeach";
+src: url("../../media/fonts/light_beach/LightBeach.otf") format("opentype"),
+        url("../../media/fonts/light_beach/LightBeach.ttf") format("truetype");
+}
+@font-face {
+font-family: "Omegle";
+src: url("../../media/fonts/omegle/OMEGLE.otf") format("opentype"),
+        url("../../media/fonts/omegle/OMEGLE.ttf") format("truetype");
+}
+     
+$nb-enable-css-custom-properties: true;
+
+$nb-themes: nb-register-theme((
+
+  background-mat-card: #ffffff,
+  text-color-input: #000000,
+  text-color-dropdown-item: #1f75b6,
+  background-dropdown-menu: #ffffff,
+  background-dropdown-item: #f5f5f5,
+  font-family-primary: unquote('Omegle, Roboto, Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif'),
+  font-family-secondary: font-family-primary,
+  mat-form-field-label: #000000,
+  mat-form-field-input: #000000,
+  mat-form-field-background-input: #ffffff,
+  mat-form-field-underline: #1f75b6,
+  mat-option-background-focus: #f5f5f5,
+
+), default, default);
+
+$nb-themes: nb-register-theme((
+
+  background-mat-card: #222b45,
+  text-color-input: #ffffff,
+  text-color-dropdown-item: #1f75b6,
+  background-dropdown-menu: #222b45,
+  background-dropdown-item: #1e253c,
+  font-family-primary: unquote('Omegle, Roboto, Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif'),
+  font-family-secondary: font-family-primary,
+  mat-form-field-label: #ffffff,
+  mat-form-field-input: #ffffff,
+  mat-form-field-background-input: #222b45,
+  mat-form-field-underline: #1f75b6,
+  mat-option-background-focus:#1e253c,
+), dark, dark);

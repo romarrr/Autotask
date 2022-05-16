@@ -1,0 +1,24 @@
+<div class="col-2 mx-auto">
+    <input type="text" class="form-control text-center search" placeholder="Nom du projet" [(ngModel)]="searchTerm">  
+</div>
+
+<div class="row justify-content-around mt-5 mx-5">
+
+    <mat-card class="projectcard col-3 mb-5 mx-5" *ngFor="let project of projectsSorted | projectFilter:searchTerm" [routerLink]="['/project/detail', project.id]">
+
+        <div class="row justify-content-around">
+            <div class="col-7">       
+                <p class="text-uppercase name">{{ project.name }}</p>
+                <p class="text-capitalize type">{{ project.type }}</p>
+                <p class="text-capitalize company">{{ project.client.company }}</p> 
+            </div>
+
+            <div class="image-ronde-bg col-5 my-auto"
+                style="background-image: url({{project.logo}})">  
+            </div>
+            
+        </div>
+    
+    </mat-card>  
+
+</div>

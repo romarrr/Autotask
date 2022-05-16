@@ -1,0 +1,23 @@
+<div class="container-fluid">
+
+    <a class="text-decoration-none me-5" routerLink="/home"><img class="logo" src="https://i.goopics.net/z2cnvn.png"></a>
+
+    <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+            <div class="nav-link menu-title text-uppercase fs-4 px-0 py-5" role="button" aria-expanded="false">
+                    Planning
+            </div>
+            <div class="row justify-content-center">
+                    <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" routerLink="/client">Voir le planning</a></li>
+                            <li><a class="dropdown-item" routerLink="/client/add">Créer un planning</a></li>
+                    </ul>
+            </div>
+    </div>
+
+    <div class="switch my-auto ms-5">
+            <mat-slide-toggle (click)="switchMode(mode)"><span class="darkmode">DarkMode</span></mat-slide-toggle>
+    </div>
+</div>
+
+
+

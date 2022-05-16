@@ -1,0 +1,25 @@
+<div class="row justify-content-around mx-5">
+
+    <div class="row justify-content-center">
+        <h2 class="text-center">Liste de vos tâches</h2>
+    </div>
+
+    <mat-card class="todocard col-3 mb-5 mx-3" *ngFor="let todo of planningDeveloperTodos" [routerLink]="['/planningdeveloper/user/' + user.id + '/todo/detail/' + todo.id]">
+
+        <div class="row justify-content-around">
+            <div class="col-7">       
+                <p class="name">{{ todo.name }}</p>
+                <p class="tododescription">{{ todo.description }}</p>
+                <p>{{ todo.skill.specializationname }} - {{ todo.skill.experiencename }}</p>   
+            </div>
+
+            <div class="image-ronde-bg col-5 my-auto"
+                style="background-image: url({{todo.logo}})">  
+            </div>
+
+        </div>
+    
+    </mat-card>  
+
+</div>
+  

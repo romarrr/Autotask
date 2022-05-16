@@ -1,0 +1,46 @@
+<div class="login">
+
+    <div class="row justify-content-center mx-auto my-5">
+        <img id="logoautotask" src="https://i.goopics.net/1fao8t.png">
+    </div>
+
+    <div class="row justify-content-center mx-auto mt-5">
+
+        <form class="col-3" [formGroup]="login" (ngSubmit)="post()" novalidate>
+
+            <mat-form-field appearance="standard" class="form-group col-12">
+                <mat-label>Identifiant</mat-label>
+                <input matInput formControlName="email" type="text" class="form-control">
+            </mat-form-field>
+
+            <mat-form-field appearance="standard" class="form-group col-12">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput formControlName="password" type="text" class="form-control">
+            </mat-form-field>
+
+            <div *ngIf="chargement" class="row justify-content-center">
+                <img id="chargement" src="https://acegif.com/wp-content/uploads/loading-13.gif">
+            </div>
+
+            <div *ngIf="msgGood && !msgError" class="row justify-content-center">
+                <div class="col-3 text-center msgGood">
+                    <h3>Bonjour <span class="firstname">{{user.firstname}}</span> !</h3>
+                </div>
+            </div>
+
+            <div *ngIf="msgError && !msgGood" class="row justify-content-center">
+                <div class="col-3 text-center msgError">
+                    <h4 class="incorrectMsg">E-mail ou mot de passe incorrect</h4>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <button type="submit" class="validbutton col-3 btn" mat-button>Valider</button>
+            </div>
+
+        </form>
+    </div>
+    
+    
+</div>
+

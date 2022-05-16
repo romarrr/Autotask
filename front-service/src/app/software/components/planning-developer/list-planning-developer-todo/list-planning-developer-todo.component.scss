@@ -1,0 +1,41 @@
+@use '../../../../../themes.scss' as *;
+
+h2, h4, button {
+    font-family: nb-theme(font-family-primary);
+}
+
+.image-ronde-bg {
+    background-size : cover;
+    background-position : 50% 50%; 
+    width : 100px; 
+    height : 100px;
+    -moz-border-radius : 75px;
+    -webkit-border-radius : 75px;
+    border-radius : 75px;
+}
+
+.search {
+    color: nb-theme(text-color-input);
+    background: nb-theme(background-mat-card);
+}
+
+.todocard {
+    transition: all 0.2s ease;
+    background: nb-theme(background-mat-card);
+}
+
+.todocard:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.tododescription {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.name {
+    color: #8ebe44;
+}

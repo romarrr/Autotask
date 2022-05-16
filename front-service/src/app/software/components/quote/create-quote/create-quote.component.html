@@ -1,0 +1,64 @@
+<form [formGroup]="newQuote" (ngSubmit)="post()" novalidate>
+
+    <mat-card class="quote mx-auto mt-5 py-4">
+        
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Nouveau devis</h2>
+        </div>
+
+        <div class="row justify-content-around align-items-center">
+
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>                   
+                    <input matInput formControlName="name" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="mb-2 text-end" *ngIf="submitted && formControls['name'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Pour quel client ?</mat-label>
+                    <mat-select formControlName="clientid">              
+                        <mat-option *ngFor="let client of clients" [value]="client.id">{{ client.lastname }} {{ client.firstname }}</mat-option>                
+                    </mat-select>
+                </mat-form-field>  
+
+                <mat-error class="mb-2 text-end" *ngIf="submitted && formControls['clientid'].errors">
+                    Client nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Quel template ?</mat-label>
+                    <mat-select formControlName="templateid" [(value)]="selected" (selectionChange)="getTodosFromTemplate()">              
+                        <mat-option *ngFor="let template of templates" [value]="template.id">{{ template.name }}</mat-option>                
+                    </mat-select>
+                </mat-form-field>  
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Tâches supplémentaires</mat-label>                   
+                    <mat-select formControlName="todosidoutoftemplate" multiple [(value)]="todosSelected">
+                        <mat-option *ngFor="let todo of todos" [value]="todo.id">{{ todo.name }}</mat-option>  
+                    </mat-select>                        
+                </mat-form-field>  
+
+                <mat-form-field appearance="standard" class="col-12 form-group">
+                    <mat-label>Logo</mat-label>
+                    <input matInput formControlName="logo" type="text" class="form-control">
+                </mat-form-field>
+
+            </div>
+
+            <img class="col-5 image" src='https://fr.seaicons.com/wp-content/uploads/2016/05/folder-invoices-icon.png'>  
+  
+        </div>
+
+    </mat-card>
+    
+    <div class="row my-5">     
+        <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

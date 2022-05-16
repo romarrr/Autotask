@@ -1,0 +1,127 @@
+<form [formGroup]="newUser" (ngSubmit)="post()" novalidate>
+
+    <mat-card class="user mx-auto mt-5 py-4">
+        
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Nouvel utilisateur</h2>
+        </div>
+
+        <div class="row justify-content-around align-items-center">
+
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Rôle</mat-label>
+                    <mat-select formControlName="role">              
+                        <mat-option *ngFor="let role of roles" [value]="role"><span class="text-uppercase">{{ role }}</span></mat-option>                
+                    </mat-select>
+                </mat-form-field> 
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['role'].errors">
+                    Rôle nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>                   
+                    <input matInput formControlName="lastname" type="text" class="form-control text-uppercase">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['lastname'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput formControlName="firstname" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['firstname'].errors">
+                    Prénom nécessaire
+                </mat-error>
+            
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput formControlName="address" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['address'].errors">
+                    Adresse nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Code Postal</mat-label>
+                    <input matInput formControlName="postalcode" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['postalcode'].errors">
+                    Code postal nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Ville</mat-label>
+                    <input matInput formControlName="town" type="text" class="form-control">
+                </mat-form-field>
+                
+                <mat-error class="text-end" *ngIf="submitted && formControls['town'].errors">
+                    Ville nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Téléphone</mat-label>
+                    <input matInput formControlName="phone" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['phone'].errors">
+                    Numéro de téléphone nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['email'].errors">
+                    E-mail nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Compétences</mat-label>
+                    <mat-select formControlName="skillsid" multiple [(value)]="skillsSelected">  
+                        <mat-option *ngFor="let skill of skillsSorted" [value]="skill.id">
+                            <span class="text-uppercase">{{ skill.specializationname }} - {{ skill.experiencename }}</span>
+                            <div class="border border-dark border-1" *ngIf="skill.experiencename=='Sénior' && skill != skillsSorted[skillsSorted.length - 1]"></div>
+                        </mat-option>      
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['skillsid'].errors">
+                    Compétences nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput formControlName="password" type="text" class="form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['password'].errors">
+                    Mot de passe nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Photo</mat-label>
+                    <input matInput formControlName="logo" type="text" class="form-control">
+                </mat-form-field>
+                
+            </div>
+
+            <div class="col-5 image-ronde-bg" style="background-image: url('https://i.goopics.net/71ddmo.png')"></div>  
+        
+        </div>
+
+    </mat-card>
+    
+    <div class="row my-5">     
+            <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

@@ -1,0 +1,21 @@
+<div class="col-2 mx-auto">
+    <input type="text" class="form-control text-center search" placeholder="Nom de la spécialisation" [(ngModel)]="searchTerm">  
+</div>
+
+<div class="row justify-content-around mt-5 mx-5">
+
+    <mat-card class="specializationcard col-3 mb-5 mx-5" *ngFor="let specialization of specializationsSorted | specializationFilter:searchTerm" [routerLink]="['/specialization/detail', specialization.id]">
+
+        <div class="row justify-content-around">
+            <div class="col-7">       
+                <p class="text-uppercase name">{{ specialization.name }}</p>
+                <p class="specializationdescription">{{ specialization.description }}</p>  
+            </div>
+
+            <img class="image-ronde-bg col-5 my-auto" src="{{specialization.logo}}">  
+            
+        </div>
+        
+    </mat-card>  
+
+</div>

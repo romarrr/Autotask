@@ -1,0 +1,20 @@
+<nb-layout>
+
+  <!-- <nb-layout-header *ngIf="!login" fixed>
+    <app-navbar *ngIf="!planning"></app-navbar>
+    <app-navbar-user *ngIf="planning"></app-navbar-user>
+  </nb-layout-header> -->
+
+  <nb-layout-header *ngIf="!login" fixed>
+    <app-navbar></app-navbar>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer *ngIf="!login" fixed>
+    <app-footer style="width: 80%;"></app-footer>
+  </nb-layout-footer>
+
+</nb-layout>

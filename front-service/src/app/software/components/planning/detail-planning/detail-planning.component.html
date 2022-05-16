@@ -1,0 +1,47 @@
+<mat-card class="planning mx-auto mt-5">
+
+    <div class="title row mx-auto p-3">
+        <h2 class="text-center">Détail planning</h2>
+    </div>
+
+    <div class="row justify-content-around align-items-center">
+
+            <div class="text-center pt-4 pb-3">
+                <h1><span class="text-uppercase name">{{ planning.name }}</span></h1>
+            </div>
+
+            <div class="row justify-content-between px-5">
+            <mat-card class="col-3 m-3" *ngFor="let todo of planning.todos">
+                <h2>{{ todo.name }}</h2>
+                <ul>
+                    <li>{{ todo.description }}</li>
+                    <li>{{ todo.time }} minutes</li>
+                    <li>{{ todo.status }}</li>
+                    <li>{{ todo.skill.specializationname }} - {{ todo.skill.experiencename }}</li>
+                    <li>{{ todo.user.lastname }} {{ todo.user.firstname }}</li>
+                </ul>   
+            </mat-card>
+        </div>
+        <img class="col-5 image"> 
+
+    </div>
+
+</mat-card>
+
+<div class="detailbuttons row justify-content-around mx-auto my-5">   
+    <button class="col-2 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/planning/update/', planning.id]">Mettre à jour</button>
+    <button class="col-2 bg-danger text-white pt-1" mat-button (click)="openVerif(verif)">SUPPRIMER</button>              
+</div>
+
+<ng-template #verif let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Suppression</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment supprimer le devis "<span class="fw-bold text-uppercase">{{ planning.name }}</span>" ?</h4>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button class="col-3 bg-danger text-white pt-1" mat-button (click)="deletePlanningById(planning.id); showDeletePlanningToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>

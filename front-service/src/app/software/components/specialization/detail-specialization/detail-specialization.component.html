@@ -1,0 +1,42 @@
+<mat-card class="specialization mx-auto mt-5">
+
+    <div class="title row mx-auto p-3">
+        <h2 class="text-center">Détail spécialisation</h2>
+    </div>
+
+    <div class="row justify-content-around align-items-center">
+
+        <div class="col-7">
+
+            <div>
+                <h2><span class="text-uppercase name">{{ specialization.name }}</span></h2>
+            </div>
+            <div>
+                <p>Description : <span class="infos"> {{ specialization.description }}</span></p>
+            </div>
+
+        </div>
+
+        <img class="col-5 image" src="{{specialization.logo}}">                    
+
+    </div>
+
+</mat-card>
+
+<div class="detailbuttons row justify-content-around mx-auto my-5">    
+    <button class="col-3 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/specialization/update/', specialization.id]">Mettre à jour</button>
+    <button class="col-3 bg-danger text-white pt-1" mat-button (click)="openVerif(verif)">SUPPRIMER</button>            
+</div>
+
+<ng-template #verif let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Suppression</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment supprimer la spécialisation "<span class="fw-bold"><span class="text-uppercase">{{ specialization.name }}</span></span>" ?</h4>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button type="button" class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button type="button" class="col-3 bg-danger text-white pt-1" mat-button (click)="deleteSpecializationById(specialization.id); showToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>

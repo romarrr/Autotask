@@ -1,0 +1,50 @@
+<mat-card class="user mx-auto mt-5">
+
+    <div class="title row mx-auto p-3">
+        <h2 class="text-center">Détail utilisateur</h2>
+    </div>
+
+    <div class="row justify-content-around align-items-center">
+
+        <div class="col-7">
+
+            <div>
+                <h2><span class="text-uppercase lastname">{{ user.lastname }}</span> <span class="text-capitalize firstname"> {{ user.firstname }}</span></h2>
+            </div>
+
+            <div>
+                <p>Rôle : <span class="infos"> {{ user.role }}</span></p>
+                <p>E-mail : <span class="infos"> {{ user.email }}</span></p>
+                <p>Téléphone : <span class="infos"> {{ user.phone }}</span></p>
+                <p>Adresse : <span class="infos"> {{ user.address }} {{ user.postalcode }} {{ user.town }}</span></p>
+                <p>Compétences :</p>
+                <p *ngFor="let skill of user.skills">{{ skill.specializationname }} - {{ skill.experiencename }}</p>
+            </div>
+
+        </div>
+
+        <div class="col-5 image-ronde-bg"    
+            style="background-image: url({{user.photo}})">                    
+        </div>
+
+    </div>
+
+</mat-card>
+
+<div class="detailbuttons row justify-content-around mx-auto my-5">    
+    <button class="col-3 updatebutton text-white text-uppercase pt-1" mat-raised-button [routerLink]="['/user/update/', user.id]">Mettre à jour</button>
+    <button class="col-3 bg-danger text-white text-danger pt-1" mat-raised-button (click)="openVerif(verif)">SUPPRIMER</button>              
+</div>
+
+<ng-template #verif let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Suppression</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment supprimer l'utilisateur "<span class="fw-bold"><span class="text-uppercase">{{ user.lastname }}</span> {{ user.firstname }}</span>" ?</h4>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button type="button" class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button type="button" class="col-3 bg-danger text-white pt-1" mat-button (click)="deleteUserById(user.id); showToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>

@@ -1,0 +1,46 @@
+@use '../../../../../themes.scss' as *;
+
+.project {
+    width: 75%;
+    background-color: nb-theme(background-mat-card);
+}
+
+h2, h4, button {
+    font-family: nb-theme(font-family-primary);
+}
+
+.updatebutton { 
+    background-color: #1f75b6;
+}
+
+.infos { 
+    color: #1f75b6;
+}
+
+.name, .lastname {
+    color: #8ebe44;
+}
+
+.firstname {
+    color: #06a79c;
+}
+
+.image {
+    width : 250px; 
+}
+
+.title { 
+    width: 20%;
+    background-color: nb-theme(background-mat-card);
+    margin-bottom: -80px;
+    transform: translateY(-60%);
+    border-radius : 5px;
+}
+
+.detailbuttons {
+    width: 40%;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    background-color: nb-theme(background-mat-card);
+}

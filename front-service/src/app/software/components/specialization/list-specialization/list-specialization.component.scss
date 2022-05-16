@@ -1,0 +1,31 @@
+@use '../../../../../themes.scss' as *;
+
+.image-ronde-bg{
+    width : 115px; 
+}
+
+.search {
+    color: nb-theme(text-color-input);
+    background: nb-theme(background-mat-card);
+}
+
+.specializationcard {
+    transition: all 0.2s ease;
+    background: nb-theme(background-mat-card);
+}
+
+.specializationcard:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.specializationdescription {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.name {
+    color: #8ebe44;
+}

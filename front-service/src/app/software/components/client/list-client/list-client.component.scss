@@ -1,0 +1,34 @@
+@use '../../../../../themes.scss' as *;
+
+.image-ronde-bg {
+    background-size : cover;
+    background-position : 50% 50%; 
+    width : 100px; 
+    height : 100px;
+    -moz-border-radius : 75px;
+    -webkit-border-radius : 75px;
+    border-radius : 75px;
+}
+
+.clientcard {
+    transition: all 0.2s ease;
+    background: nb-theme(background-mat-card);
+}
+
+.search {
+    color: nb-theme(text-color-input);
+    background: nb-theme(background-mat-card);
+}
+
+.clientcard:hover {
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.lastname {
+    color: #8ebe44;
+}
+
+.firstname {
+    color: #06a79c;
+}

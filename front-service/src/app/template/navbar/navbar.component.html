@@ -1,0 +1,107 @@
+<div class="container-fluid">
+
+        <a class="text-decoration-none me-5" routerLink="/home"><img class="logo" src="https://i.goopics.net/1fao8t.png"></a>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <div class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/client" role="button" aria-expanded="false">
+                        Clients
+                </div>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/client">Voir les clients</a></li>
+                                <li><a class="dropdown-item" routerLink="/client/add">Nouveau client</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/user" role="button" aria-expanded="false">
+                        Utilisateurs
+                </a>
+                <div class="row justify-content-center">
+                        <ul class=" dropdown-menu dropdown-menu-user text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/user">Voir les utilisateurs</a></li>
+                                <li><a class="dropdown-item" routerLink="/user/add">Nouvel utilisateur</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/project" role="button" aria-expanded="false">
+                        Projets
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/project">Voir les projets</a></li>
+                                <li><a class="dropdown-item" routerLink="/project/add">Nouveau projet</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/specialization" role="button" aria-expanded="false">
+                        Spécialisations
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu dropdown-menu-user text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/specialization">Voir les spécialisations</a></li>
+                                <li><a class="dropdown-item" routerLink="/specialization/add">Nouvelle spécialisation</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/template" role="button" aria-expanded="false">
+                        Modèles
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/template">Voir les modèles</a></li>
+                                <li><a class="dropdown-item" routerLink="/template/add">Nouveau modèle</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/todo" role="button" aria-expanded="false">
+                        Tâches
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/todo">Voir les tâches</a></li>
+                                <li><a class="dropdown-item" routerLink="/todo/add">Nouvelle tâche</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/quote" role="button" aria-expanded="false">
+                        Devis
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/quote">Voir les devis</a></li>
+                                <li><a class="dropdown-item" routerLink="/quote/add">Nouveau devis</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="my-auto nav-item dropdown hover-underline-animation mx-4" routerLinkActive="active">
+                <a class="nav-link menu-title text-uppercase fs-5 px-0 py-5" routerLink="/planning" role="button" aria-expanded="false">
+                        Planning
+                </a>
+                <div class="row justify-content-center">
+                        <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/planning">Voir les planning</a></li>
+                                <li><a class="dropdown-item" routerLink="/planning/add">Nouveau planning</a></li>
+                        </ul>
+                </div>
+        </div>
+
+        <div class="switch my-auto ms-5">
+                <mat-slide-toggle (click)="switchMode(mode)"><span class="darkmode"></span></mat-slide-toggle>
+        </div>
+</div>
+
+
+

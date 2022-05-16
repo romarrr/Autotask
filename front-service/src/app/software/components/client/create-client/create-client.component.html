@@ -1,0 +1,111 @@
+<form [formGroup]="newClient" (ngSubmit)="post()" novalidate>
+
+    <mat-card class="client mx-auto mt-5 py-4">
+
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Nouveau client</h2>
+        </div>
+       
+        <div class="row justify-content-around align-items-center">
+
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>                   
+                    <input matInput formControlName="lastname" type="text" class="form-control">
+                    <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['lastname'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput formControlName="firstname" type="text" class="form-control">
+                    <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['firstname'].errors">
+                    Prénom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Société</mat-label>
+                    <input matInput formControlName="company" type="text" class="form-control">
+                    <mat-icon matSuffix>domain</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['company'].errors">
+                    Société nécessaire
+                </mat-error>
+            
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>Adresse (n°, voie)</mat-label>
+                    <input matInput formControlName="address" type="text" class="form-control">
+                    <mat-icon matSuffix>location_city</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['address'].errors">
+                    Adresse nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>Code Postal</mat-label>
+                    <input matInput formControlName="postalcode" type="text" maxlength="5" class="form-control">
+                    <mat-icon matSuffix>location_city</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['postalcode'].errors">
+                    Code postal nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>Ville</mat-label>
+                    <input matInput formControlName="town" type="text" class="form-control">
+                    <mat-icon matSuffix>location_city</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['town'].errors">
+                    Ville nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>Téléphone</mat-label>
+                    <input matInput formControlName="phone" type="text" maxlength="10" class="form-control">
+                    <mat-icon matSuffix>call</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['phone'].errors">
+                    Numéro de téléphone nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>E-mail</mat-label>
+                    <input type="email" matInput formControlName="email" type="text" class="form-control">
+                    <mat-icon matSuffix>mail</mat-icon>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['email'].errors">
+                    E-mail nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12 ">
+                    <mat-label>Photo</mat-label>
+                    <input matInput formControlName="logo" type="text" class="form-control">
+                    <mat-icon matSuffix>add_a_photo</mat-icon>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col-5 image-ronde-bg" style="background-image: url('https://iconarchive.com/download/i18421/iconshock/free-folder/folder-customer.ico')"></div>  
+        
+        </div>
+
+    </mat-card>
+    
+    <div class="row my-5">     
+            <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

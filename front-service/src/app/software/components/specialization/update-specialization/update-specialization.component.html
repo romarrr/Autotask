@@ -1,0 +1,48 @@
+<form [formGroup]="updateSpecialization" (ngSubmit)="updateSpecializationById()">
+
+    <mat-card class="specialization mx-auto mt-5 py-4">
+
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Modification spécialisation</h2>
+        </div>
+
+        <div class="row justify-content-around align-items-center">
+        
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="name" type="text" class="form-control name">
+                </mat-form-field>
+
+                <mat-error class="mb-2 text-end" *ngIf="submitted && formControls['name'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Description</mat-label>
+                    <textarea cdkTextareaAutosize matInput formControlName="description" type="text" class="form-control infos"></textarea>
+                </mat-form-field>
+
+                <mat-error class="mb-2 text-end" *ngIf="submitted && formControls['description'].errors">
+                    Description nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Logo</mat-label>
+                    <input matInput formControlName="logo" type="text" class="form-control">
+                </mat-form-field>  
+
+            </div>
+
+            <img class="col-5 image-ronde-bg" src="{{specialization.logo}}">   
+            
+        </div> 
+
+    </mat-card>
+
+    <div class="row my-5">
+        <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

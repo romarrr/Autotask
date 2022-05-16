@@ -1,0 +1,80 @@
+<form [formGroup]="updateTodo" (ngSubmit)="updateTodoById()">
+
+    <mat-card class="todo mx-auto mt-5 py-4">
+
+        <div class="title row mx-auto p-3">
+            <h2 class="text-center">Modification tâche</h2>
+        </div>
+
+        <div class="row justify-content-around align-items-center">
+ 
+            <div class="col-7">
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="name" type="text" class="py-0 px-1 form-control text-uppercase name">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['name'].errors">
+                    Nom nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Description</mat-label>
+                    <textarea cdkTextareaAutosize matInput formControlName="description" type="text" class="pt-0 px-1 form-control"></textarea>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['description'].errors">
+                    Description nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Type</mat-label>
+                    <input matInput formControlName="type" type="text" class="py-0 px-1 form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['type'].errors">
+                    Type nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Durée</mat-label>
+                    <input matInput formControlName="time" type="text" class="py-0 px-1 form-control">
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['time'].errors">
+                    Durée nécessaire
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Compétences</mat-label>
+                    <mat-select formControlName="skillid">  
+                        <mat-option *ngFor="let skill of skillsSorted" [value]="skill.id">
+                            <span class="text-uppercase">{{ skill.specializationname }} - {{ skill.experiencename }}</span>
+                            <div class="border border-dark border-1" *ngIf="skill.experiencename=='Sénior' && skill != skillsSorted[skillsSorted.length - 1]"></div>
+                        </mat-option>      
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-error class="text-end" *ngIf="submitted && formControls['skillid'].errors">
+                    Compétences nécessaires
+                </mat-error>
+
+                <mat-form-field appearance="standard" class="form-group col-12">
+                    <mat-label>Logo</mat-label>
+                    <input matInput formControlName="logo" type="text" class="py-0 px-1 form-control">
+                </mat-form-field> 
+
+            </div>
+
+            <img class="col-5 image" src="{{todo.logo}}">                  
+            
+        </div> 
+
+    </mat-card>
+
+    <div class="row my-5">
+        <button type="submit" class="col-1 bg-success mx-auto text-white pt-1" mat-button>VALIDER</button>
+    </div>
+
+</form>

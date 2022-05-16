@@ -1,0 +1,28 @@
+<div class="col-2 mx-auto">
+    <input type="text" class="form-control text-center search" placeholder="Nom de l'utilisateur" [(ngModel)]="searchTerm">  
+</div>
+
+<div class="row justify-content-around mt-5 mx-5">
+
+    <mat-card class="usercard col-3 mb-5 mx-5" *ngFor="let user of users | userFilter:searchTerm">
+
+        <a [routerLink]="['/user/detail', user.id]" class="text-decoration-none">
+            <div class="row justify-content-around">
+                <div class="col-7">       
+                    <p class="text-uppercase lastname">{{ user.lastname }}</p>
+                    <p class="text-capitalize firstname">{{ user.firstname }}</p>
+                    <p class="text-capitalize">{{ user.role }}</p>
+                    <p>{{ user.phone }}</p>   
+                </div>
+
+                <div class="image-ronde-bg col-5"
+                    style="background-image: url({{user.photo}})">  
+                </div>
+            </div>
+        </a>
+    
+    </mat-card>  
+
+</div>
+
+  

@@ -1,0 +1,50 @@
+@use '../../../../../themes.scss' as *;
+
+.project {
+    width: 75%;
+    background-color: nb-theme(background-mat-card);
+}
+
+h2, input, button, mat-label, mat-option, mat-select, mat-error {
+    font-family: nb-theme(font-family-primary);
+}
+
+.name {
+    color: #8ebe44 !important;
+}
+
+.image {
+    width : 250px; 
+}
+
+.title { 
+    width: 25%;
+    background-color: nb-theme(background-mat-card);
+    margin-bottom: -80px;
+    transform: translateY(-70%);
+    border-radius : 10px;
+}
+
+input, .mat-focused input, mat-select, mat-option {
+    color: nb-theme(mat-form-field-input) !important;
+    background-color: nb-theme(mat-form-field-background-input);
+}
+
+::ng-deep .mat-form-field-label, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow {
+    /*change color of label*/
+    color: nb-theme(mat-form-field-label);
+}
+
+::ng-deep .mat-form-field-ripple, ::ng-deep .mat-form-field-underline {
+     /*change color of underline when focused*/
+    background-color: nb-theme(mat-form-field-label) !important;
+}
+
+::ng-deep .mat-select-panel {
+    background-color: nb-theme(mat-option-background-focus);
+}
+
+mat-option.mat-selected {
+    color: #1f75b6 !important;
+    background-color: nb-theme(mat-form-field-background-input) !important;
+}

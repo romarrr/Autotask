@@ -1,0 +1,83 @@
+<mat-card class="quote mx-auto mt-5">
+
+    <div class="title row mx-auto p-3">
+        <h2 class="text-center">Détail devis</h2>
+    </div>
+
+    <div class="row justify-content-around align-items-center">
+
+        <div class="col-7">
+
+            <div>
+                <h2><span class="text-uppercase name">{{ quote.name }}</span></h2>
+            </div>
+
+            <div>
+                
+                <p>Client : <span class="infos">{{ quote.client.lastname }} {{ quote.client.firstname }}</span></p>
+                <p>Société du client : <span class="infos">{{ quote.client.company }}</span></p>
+                <p>Nom du template : <span class="infos">{{ quote.templatename }}</span></p>
+                <p>Statut : <span class="infos">{{ quote.status }}</span></p>
+                <p>Liste des tâches :</p>
+                <div class="row justify-content-around">
+                    <table mat-table [dataSource]="dataSource" matSort #todosSort="matSort" class="mat-elevation-z2">            
+                        <div class="col-6">
+                            <ng-container class="fs-1" matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par nom"> Nom </th>
+                            <td mat-cell class="infos" *matCellDef="let todo"> {{todo.name}} </td>
+                            </ng-container>
+                        </div>
+                        <div class="col-6">
+                            <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par temps"> Temps (en minutes) </th>
+                            <td mat-cell class="infos" *matCellDef="let todo"> {{todo.time}}</td>
+                            </ng-container>
+                        </div>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator #todos [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons ></mat-paginator>
+                </div>
+                  
+            </div>
+
+        </div>
+
+        <img class="col-5 image" src="{{quote.logo}}">                    
+
+    </div>
+
+</mat-card>
+
+<div class="detailbuttons row justify-content-around mx-auto my-5">  
+    <button class="col-2 bg-success text-white pt-1" mat-button (click)="openVerif(quoteValidation)">VALIDER CE DEVIS</button>  
+    <button class="col-2 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/quote/update/', quote.id]">Mettre à jour</button>
+    <button class="col-2 bg-danger text-white pt-1" mat-button (click)="openVerif(verif)">SUPPRIMER</button>              
+</div>
+
+<ng-template #verif let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Suppression</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment supprimer le devis "<span class="fw-bold text-uppercase">{{ quote.name }}</span>" ?</h4>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button class="col-3 bg-danger text-white pt-1" mat-button (click)="deleteQuoteById(quote.id); showDeleteQuoteToast(); redirection(); modal.close();">SUPPRIMER</button>
+    </div>
+</ng-template>
+
+<ng-template #quoteValidation let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title my-auto mx-auto">Validation</h2>
+    </div>
+    <div class="modal-body">
+        <h4 class="text-center my-auto">Voulez-vous vraiment valider ce devis "<span class="fw-bold text-uppercase">{{ quote.name }}</span>" ?</h4>
+        <p>Les tâches contenues dans ce devis vont être distribuées à vos équipes.</p>
+    </div>
+    <div class="row justify-content-around mx-0 modal-footer">
+        <button type="button" class="col-3 bg-secondary text-white text-uppercase pt-1" mat-button (click)="modal.close()">ANNULER</button>
+        <button type="button" ngbAutofocus class="col-3 bg-success text-white pt-1" mat-button (click)="validQuoteById(quote.id); showValidQuoteToast(); redirection(); modal.close();">Valider</button>
+    </div>
+</ng-template>
