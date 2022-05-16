@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "FvHUZ0ingL7DdC3Mm6m0Gm0fvVsWNV72ZOSU7kPRm6k=",
+  "Source": "template-service",
+  "BasePath": "_content/template-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

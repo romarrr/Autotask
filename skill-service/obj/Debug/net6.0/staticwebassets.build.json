@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wGsKqB+KI5/RVhmXHp+UnnuV3hUbgTOmsHHZXVpgx7Q=",
+  "Source": "skill-service",
+  "BasePath": "_content/skill-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

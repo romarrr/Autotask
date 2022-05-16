@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5wFI7NH/slT3+JhpaYZ2wu7EKuHeQ8OQ1i1tDy8XTLE=",
+  "Source": "quote-service",
+  "BasePath": "_content/quote-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

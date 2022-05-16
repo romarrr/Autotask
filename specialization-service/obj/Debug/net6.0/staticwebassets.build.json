@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "f7S5pTkt8bMEglqUHBKndq3pIyp+sxBFEVJ6OI7x1qc=",
+  "Source": "specialization-service",
+  "BasePath": "_content/specialization-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
