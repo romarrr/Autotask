@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tgXnliI2FeIhWOQkicd/LmShqXFzcDy8Wgl7qizXPnKazYjycikP8ZVml80Cw/jpw3Wg7Rp0MJtbT5De8fM5CA==",
+  "dgSpecHash": "jZnb/udvDaAYvf+EB5KGjs5h8TDC5z99jlUGZvNN3bXsH9WmI6hP80entuPkAEy/UdPJv7sGpXD9dVMe3vlv2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\specialization-service\\specialization-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\specialization-service\\specialization-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",

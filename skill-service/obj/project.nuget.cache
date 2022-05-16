@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bj4fzGPxRDAnBqWGkWT8yIrUoH6rxEFSmG5fQiSPTw7+AguPwPoaxfJ8zV/fYfgr+AY6wTXsn1d9Yw36qeY9hg==",
+  "dgSpecHash": "bff/nL2d3R6XANCR2iOgJqukQ96VZGpI87yYZb0DmBruwJrqvZdQwB/h95os2xLWNrEkaFdvHLQiMsEUUW+YIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\skill-service\\skill-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\skill-service\\skill-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",

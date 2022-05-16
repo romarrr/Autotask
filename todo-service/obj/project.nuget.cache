@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "myVNaznlkRloxGrOuIYnXxX4Pli7gFOfyCy93jGb+G3XQ7UkqBHf4z2PI5leucDgvOktu4lG/8F44ZiFFnT21Q==",
+  "dgSpecHash": "2Eo1wMZwkCu4kj2igJVovFRebzroj5bpsOCOyWV4NjGxbawGbPum3jg5ZueUEws0y2UfbnGbJIIuyJ5h+dV1Kg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\todo-service\\todo-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\todo-service\\todo-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",
