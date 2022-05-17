@@ -16,7 +16,7 @@ export class ListClientFilterPipe implements PipeTransform
         }
         
         /**
-         * Retourne tous les clients ayant des caractères
+         * Retourne tous les Clients ayant des caractères
          * identiques à ceux dans l'input, lettres comparées en minuscule et
          * à chaques lettres rentrées
          */

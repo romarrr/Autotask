@@ -27,28 +27,26 @@ h2, input, button, mat-label, mat-error, mat-option, mat-select {
     border-radius : 5px;
 }
 
-input, .mat-focused input {
-    color: nb-theme(mat-form-field-input);
+input, .mat-focused input, mat-select, mat-option {
+    color: nb-theme(mat-form-field-input) !important;
     background-color: nb-theme(mat-form-field-background-input);
 }
 
-::ng-deep .mat-form-field-label {
-    /*change color of label*/
+::ng-deep .mat-option-pseudo-checkbox, ::ng-deep .mat-form-field-label, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow {
     color: nb-theme(mat-form-field-label);
 }
 
-::ng-deep .mat-form-field-underline {
-     /*change color of underline*/
-    background-color: nb-theme(mat-form-field-label) !important;
-} 
-
-::ng-deep .mat-form-field-ripple {
-     /*change color of underline when focused*/
+::ng-deep .mat-form-field-ripple, ::ng-deep .mat-form-field-underline {
     background-color: nb-theme(mat-form-field-label) !important;
 }
 
-::ng-deep .mat-pseudo-checkbox {
-    margin-bottom: 5px !important;
+::ng-deep .mat-select-panel {
+    background-color: nb-theme(mat-option-background-focus);
+}
+
+mat-option.mat-selected {
+    color: #1f75b6 !important;
+    background-color: nb-theme(mat-form-field-background-input) !important;
 }
 
 .name {

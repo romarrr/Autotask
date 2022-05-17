@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Template } from '../models/template';
 import { Todo } from '../models/todo';
 
@@ -15,7 +14,7 @@ export class TemplateService {
 
   todos: Todo[] = [];
    
-  constructor(private route: Router, private http : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   getTemplates(): Observable<Template[]>
   {

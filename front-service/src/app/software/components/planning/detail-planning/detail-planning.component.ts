@@ -50,8 +50,8 @@ export class DetailPlanningComponent implements OnInit {
 
   showUpdatePlanningToast() {
     const config: NbIconConfig = { status: 'success', icon: 'checkmark-outline', pack: 'eva' };
-    var quotename = this.planning.name.toUpperCase();
-    this.toastrService.show('Le planning ' + quotename + ' a été mis à jour.', `Planning modifié`,  config);
+    var planningName = this.planning.name.toUpperCase();
+    this.toastrService.show('Le planning ' + planningName + ' a été mis à jour.', `Planning modifié`,  config);
   }
 
 }

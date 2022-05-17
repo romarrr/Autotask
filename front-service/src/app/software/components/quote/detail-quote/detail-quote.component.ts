@@ -11,6 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Todo } from 'src/app/software/models/todo';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort } from '@angular/material/sort';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-detail-quote',
@@ -32,6 +33,7 @@ export class DetailQuoteComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource(this.quote.todos);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.todosSort;
+    this.cdRef.detectChanges();
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -53,7 +55,8 @@ export class DetailQuoteComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute, 
     private modalService: NgbModal, 
     private toastrService: NbToastrService,
-    private _liveAnnouncer: LiveAnnouncer
+    private _liveAnnouncer: LiveAnnouncer,
+    private cdRef:ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {

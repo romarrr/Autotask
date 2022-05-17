@@ -6,6 +6,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 })
 export class paginationFr extends MatPaginatorIntl {
 
+  // Cette classe permet de traduire en francais le MatPaginator
+  // MatPaginator permet de paginer les données dans un tableau
   override itemsPerPageLabel = 'Lignes par page';
   override nextPageLabel = 'Page suivante';
   override previousPageLabel = 'Page précédente';
@@ -18,7 +20,6 @@ export class paginationFr extends MatPaginatorIntl {
     }
     length = Math.max(length, 0);
     const startIndex = page * pageSize;
-    // Si l'index de début dépasse la longueur de la liste, n'essayez pas de fixer l'index de fin à la fin.
     const endIndex = startIndex < length ?
       Math.min(startIndex + pageSize, length) :
       startIndex + pageSize;

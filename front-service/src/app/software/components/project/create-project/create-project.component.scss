@@ -25,18 +25,17 @@ h2, input, button, mat-label, mat-select, mat-option, mat-error {
     border-radius : 5px;
 }
 
+// Gestion du dark mode pour l'input select
 input, .mat-focused input, mat-select, mat-option {
     color: nb-theme(mat-form-field-input) !important;
     background-color: nb-theme(mat-form-field-background-input);
 }
 
-::ng-deep .mat-form-field-label, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow {
-    /*change color of label*/
+::ng-deep .mat-form-field-label, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow, ::ng-deep .mat-datepicker-toggle-default-icon, ::ng-deep .mat-date-range-input-separator {
     color: nb-theme(mat-form-field-label);
 }
 
 ::ng-deep .mat-form-field-ripple, ::ng-deep .mat-form-field-underline {
-     /*change color of underline when focused*/
     background-color: nb-theme(mat-form-field-label) !important;
 }
 
@@ -47,4 +46,22 @@ input, .mat-focused input, mat-select, mat-option {
 mat-option.mat-selected {
     color: #1f75b6 !important;
     background-color: nb-theme(mat-form-field-background-input) !important;
+}
+
+// Gestion du dark mode pour le calendrier
+::ng-deep mat-calendar {
+    background: nb-theme(background-mat-card);
+    color: nb-theme(mat-form-field-input) !important;
+  }
+  
+::ng-deep .mat-calendar-body-cell-content, ::ng-deep .mat-calendar-previous-button, ::ng-deep .mat-calendar-next-button, ::ng-deep .mat-calendar-table-header, ::ng-deep .mat-calendar-body-label {
+    color: nb-theme(mat-form-field-input) !important;
+}
+
+::ng-deep .mat-calendar-arrow {
+    fill: nb-theme(mat-form-field-input) !important;
+}
+
+::ng-deep .mat-calendar-body-today {
+    border-color: nb-theme(mat-form-field-input) !important;
 }

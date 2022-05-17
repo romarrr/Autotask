@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Specialization } from '../models/specialization';
 
@@ -9,7 +8,7 @@ import { Specialization } from '../models/specialization';
 })
 export class SpecializationService {
 
-  constructor(private route: Router, private http : HttpClient) {}
+  constructor(private http : HttpClient) {}
 
   getSpecializations(): Observable<Specialization[]>
   {

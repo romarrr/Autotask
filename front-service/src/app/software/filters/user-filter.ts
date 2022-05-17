@@ -16,7 +16,7 @@ export class ListUserFilterPipe implements PipeTransform
         }
         
         /**
-         * Retourne tous les utilisateurs ayant des caractères
+         * Retourne tous les Users ayant des caractères
          * identiques à ceux dans l'input, lettres comparées en minuscule et
          * à chaques lettres rentrées
          */

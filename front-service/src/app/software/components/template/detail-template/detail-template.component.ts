@@ -1,5 +1,5 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -30,6 +30,7 @@ export class DetailTemplateComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.template.todos);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.todosSort;
+    this.cdRef.detectChanges();
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -51,7 +52,8 @@ export class DetailTemplateComponent implements OnInit {
     private toastrService: NbToastrService,
     private router: Router, 
     private route: ActivatedRoute,
-    private _liveAnnouncer: LiveAnnouncer
+    private _liveAnnouncer: LiveAnnouncer,
+    private cdRef:ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {

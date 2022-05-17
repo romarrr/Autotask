@@ -133,7 +133,7 @@ const routes: Routes = [
 
   { path: "user", component: ListUserComponent, resolve: { users: ListUserResolver } },
   { path: "user/detail/:id", component: DetailUserComponent, resolve: { user: DetailUserResolver } },
-  { path: "user/add", component: CreateUserComponent, resolve: { specializations: ListSpecializationResolver, skills: ListSkillResolver } },
+  { path: "user/add", component: CreateUserComponent, resolve: { specializations: ListSpecializationResolver, skills: ListSkillResolver, users: ListUserResolver } },
   { path: "user/update/:id", component: UpdateUserComponent, resolve: { user: DetailUserResolver, skills: ListSkillResolver } },
 ];
 

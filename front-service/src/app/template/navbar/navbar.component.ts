@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationError, Event, Router } from '@angular/router';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -12,8 +11,7 @@ export class NavbarComponent implements OnInit {
   mode = 'default';
 
   constructor(
-    private themeService: NbThemeService,
-    private router: Router
+    private themeService: NbThemeService
   ) {}
 
   switchMode(mode: string)

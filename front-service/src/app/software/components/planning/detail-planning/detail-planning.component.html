@@ -6,30 +6,29 @@
 
     <div class="row justify-content-around align-items-center">
 
-            <div class="text-center pt-4 pb-3">
-                <h1><span class="text-uppercase name">{{ planning.name }}</span></h1>
-            </div>
+        <div class="text-center pt-4 pb-3">
+            <h1><span class="text-uppercase name">{{ planning.name }}</span></h1>
+        </div>
 
-            <div class="row justify-content-between px-5">
+        <div class="row justify-content-between px-5 mb-5">
         
-                <mat-accordion *ngFor="let todo of planning.todos">
-                    <mat-expansion-panel hideToggle>
-                      <mat-expansion-panel-header>
+            <mat-accordion *ngFor="let todo of planning.todos">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
                         <mat-panel-title class="col-6">
-                          {{todo.name}}
+                           {{todo.name}}
                         </mat-panel-title>
                         <mat-panel-description class="col-6">
-                          {{todo.user.lastname}} {{todo.user.firstname}} 
+                            {{todo.user.lastname}} {{todo.user.firstname}} 
                         </mat-panel-description>
-                      </mat-expansion-panel-header>
-                      <p>{{ todo.description }}</p>
-                      <p>{{ todo.skill.specializationname }} - Niveau {{ todo.skill.experiencename }}</p>
-                      <p>{{ todo.time }} minutes</p>
-                    </mat-expansion-panel>
-                </mat-accordion>
+                    </mat-expansion-panel-header>
+                    <p>{{ todo.description }}</p>
+                    <p>{{ todo.skill.specializationname }} - Niveau {{ todo.skill.experiencename }}</p>
+                    <p>{{ todo.time }} minutes</p>
+                </mat-expansion-panel>
+            </mat-accordion>
        
         </div>
-        <img class="col-5 image"> 
 
     </div>
 
@@ -58,7 +57,7 @@
         <h2 class="modal-title my-auto mx-auto">Validation</h2>
     </div>
     <div class="modal-body">
-        <h4 class="text-center my-auto">Voulez-vous vraiment mettre à jour ce devis "<span class="fw-bold text-uppercase">{{ planning.name }}</span>" ?</h4>
+        <h4 class="text-center my-auto">Voulez-vous vraiment mettre à jour ce planning "<span class="fw-bold text-uppercase">{{ planning.name }}</span>" ?</h4>
         <p>Les tâches provenant des devis récemment acceptés vont être ajoutées à ce planning.</p>
     </div>
     <div class="row justify-content-around mx-0 modal-footer">

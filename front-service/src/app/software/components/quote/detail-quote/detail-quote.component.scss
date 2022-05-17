@@ -15,6 +15,19 @@ h2, h4, button, table {
     font-size: 15px !important;
 }
 
+mat-paginator, ::ng-deep .mat-select-panel, ::ng-deep .mat-select-min-line, ::ng-deep .mat-select-arrow {
+    color: nb-theme(text-color-input) !important;
+    background-color: nb-theme(background-mat-card) !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: nb-theme(text-color-input) !important;
+}
+
+::ng-deep .mat-option-text {
+    color: nb-theme(text-color-input) !important;
+}
+
 .updatebutton { 
     background-color: #1f75b6;
 }

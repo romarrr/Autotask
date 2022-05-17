@@ -10,6 +10,15 @@ h1, h2, h4, button, mat-panel-title, mat-panel-description {
     font-family: nb-theme(font-family-primary);
 }
 
+mat-panel-title, mat-panel-description {
+    color: nb-theme(text-color-input);
+    
+}
+
+mat-expansion-panel{
+    background-color: nb-theme(background-mat-card) !important;
+}
+
 .updatebutton { 
     background-color: #1f75b6;
 }

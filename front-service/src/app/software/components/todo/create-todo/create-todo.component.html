@@ -51,7 +51,7 @@
                     <mat-select formControlName="skillid">  
                         <mat-option *ngFor="let skill of skillsSorted" [value]="skill.id">
                             <span class="text-uppercase">{{ skill.specializationname }} - {{ skill.experiencename }}</span>
-                            <div class="border border-dark border-1" *ngIf="skill.experiencename=='Sénior' && skill != skillsSorted[skillsSorted.length - 1]"></div>
+                            <div class="border border-1" *ngIf="skill.experiencename=='Sénior' && skill != skillsSorted[skillsSorted.length - 1]"></div>
                         </mat-option>      
                     </mat-select>
                 </mat-form-field>

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Todo } from '../models/todo';
 
 @Injectable({
@@ -11,11 +10,7 @@ export class TodoService {
 
   todos: Todo[] = [];
    
-  constructor(
-    private route: Router,
-    private http : HttpClient
-    
-  ) { }
+  constructor(private http : HttpClient) { }
 
   getTodos(): Observable<Todo[]>
   {
