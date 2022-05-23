@@ -9,29 +9,32 @@
         <div class="col-7">
 
             <div>
-                <h2><span class="text-uppercase name">{{ todo.name }}</span></h2>
+                <h2><span class="text-uppercase name">{{ planningDeveloperTodo.name }}</span></h2>
             </div>
 
-            <div>     
-                <p>Status : <span class="infos">{{ todo.status }}</span></p>    
-                <p>Language : <span class="infos">{{ todo.skill.specializationname }}</span></p>
-                <p>Description : <span class="infos">{{ todo.description }}</span></p>
-                <p>Durée d'accomplissement : <span class="infos">{{ todo.time }}</span> minutes</p>
-                <p>Type : <span class="infos">{{ todo.type }}</span></p>
+            <div>  
+                <p>Status : <span class="infos">{{ planningDeveloperTodo.status }}</span></p>     
+                <p>Type : <span class="infos">{{ planningDeveloperTodo.type }}</span></p>
+                <p *ngIf="planningDeveloperTodo.skill">Language : <span class="infos">{{ planningDeveloperTodo.skill.specializationname }}</span></p>
+                <p>Description : <span class="infos">{{ planningDeveloperTodo.description }}</span></p>
+                <p>Durée d'accomplissement : <span class="infos">{{ planningDeveloperTodo.time }}</span> minutes</p>
             </div>
 
-        </div>
-
-        <img class="col-5 image" src="{{todo.logo}}">                    
+        </div>                
 
     </div>
 
 </mat-card>
 
-<div class="detailbuttons row justify-content-around mx-auto my-5">    
-    <button class="col-3 startbutton text-white text-uppercase pt-1" mat-button [routerLink]="['/todo/update/', todo.id]">Démarrer cette tâche</button>            
-    <button class="col-3 updatebutton text-white text-uppercase pt-1" mat-button [routerLink]="['/todo/update/', todo.id]">J'ai terminé cette tâche</button>            
+<div *ngIf="planningDeveloperTodo.status == 'A Faire'" class="detailbuttons row justify-content-around mx-auto my-5">    
+    <button class="col-3 startbutton text-white text-uppercase pt-1" (click)="startTodoById()" mat-button>Démarrer cette tâche</button>                  
 </div>
+
+<div *ngIf="planningDeveloperTodo.status == 'En cours'" class="detailbuttons row justify-content-around mx-auto my-5">           
+    <button class="col-3 updatebutton text-white text-uppercase pt-1" (click)="finishTodoById()" mat-button>J'ai terminé cette tâche</button>            
+</div>
+
+<div *ngIf="planningDeveloperTodo.status == 'Terminé'" class="row justify-content-around mx-auto my-5"></div>
 
 <!-- <ng-template #verif let-modal>
     <div class="modal-header">

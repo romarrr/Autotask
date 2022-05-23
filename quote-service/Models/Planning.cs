@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using PlanningService.Models;
 
 namespace QuoteService.Models
 {
@@ -12,8 +13,8 @@ namespace QuoteService.Models
         [BsonElement("name")]
         public string Name { get; set; } = String.Empty;
 
-        public string[] Todosid { get; set; } = new string[100000];
-
         public ICollection<Todo> todos { get; set; } = new List<Todo>();
+
+        public ICollection<User> users { get; set; } = new List<User>();
     }
 }

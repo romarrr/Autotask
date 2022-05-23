@@ -22,7 +22,7 @@ namespace TodoService.Models
         public string Time { get; set; } = String.Empty;
 
         [BsonElement("status")]
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         [BsonElement("skillid")]
         public string Skillid { get; set; } = String.Empty;

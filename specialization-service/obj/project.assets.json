@@ -6993,11 +6993,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\specialization-service\\specialization-service.csproj",
+      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\specialization-service\\specialization-service.csproj",
       "projectName": "specialization-service",
-      "projectPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\specialization-service\\specialization-service.csproj",
+      "projectPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\specialization-service\\specialization-service.csproj",
       "packagesPath": "C:\\Users\\nicor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\specialization-service\\obj\\",
+      "outputPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\specialization-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicor\\AppData\\Roaming\\NuGet\\NuGet.Config"

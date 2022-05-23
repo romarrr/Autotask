@@ -47,7 +47,8 @@ import { CreateUserComponent } from './software/components/user/create-user/crea
 import { UpdateUserComponent } from './software/components/user/update-user/update-user.component';
 
 import { AboutComponent } from './software/components/about/about.component';
-import { HomeComponent } from './software/components/home/home.component';
+import { HomeAdministratorComponent } from './software/components/home/home-administrator/home-administrator.component';
+import { HomeDeveloperComponent } from './software/components/home/home-developer/home-developer.component';
 import { LoginComponent } from './software/components/login/login.component';
 
 // Resolvers
@@ -59,6 +60,7 @@ import { HomeResolver } from './software/resolvers/home.resolver';
 import { DetailPlanningResolver } from './software/resolvers/detail-planning.resolver';
 import { ListPlanningResolver } from './software/resolvers/list-planning.resolver';
 
+import { DetailPlanningDeveloperTodoResolver } from './software/resolvers/detail-planning-developer-todo.resolver';
 import { ListPlanningDeveloperTodoResolver } from './software/resolvers/list-planning-developer-todo.resolver';
 
 import { DetailProjectResolver } from './software/resolvers/detail-project.resolver';
@@ -92,7 +94,9 @@ const routes: Routes = [
   { path: "client/add", component: CreateClientComponent },
   { path: "client/update/:id", component: UpdateClientComponent, resolve: { client: DetailClientResolver } },
 
-  { path: "home", component: HomeComponent, resolve: { home: HomeResolver } },
+  { path: "administrator", component: HomeAdministratorComponent, resolve: { home: HomeResolver } },
+
+  { path: "developer", component: HomeDeveloperComponent },
 
   { path: "login", component: LoginComponent },
 
@@ -101,10 +105,10 @@ const routes: Routes = [
   { path: "planning/add", component: CreatePlanningComponent, resolve: { clients: ListClientResolver } },
   { path: "planning/update/:id", component: UpdatePlanningComponent, resolve: { planning: DetailPlanningResolver, clients: ListClientResolver } },
 
-  { path: "planningdeveloper/user/:id/todos", component: ListPlanningDeveloperTodoComponent, resolve: { planningdevelopertodos:   ListPlanningDeveloperTodoResolver, user: DetailUserResolver } },
-  { path: "planningdeveloper/user/:id/todo/detail/:id", component: DetailPlanningDeveloperTodoComponent, resolve: { todo: DetailTodoResolver } },
-  { path: "planningdeveloper/add", component: CreatePlanningComponent, resolve: { clients: ListClientResolver } },
-  { path: "planningdeveloper/update/:id", component: UpdatePlanningComponent, resolve: { planning: DetailPlanningResolver, clients: ListClientResolver } },
+  { path: "developer/:planningid/user/:userid/todos", component: ListPlanningDeveloperTodoComponent, resolve: { plannings: ListPlanningResolver, planningdevelopertodos: ListPlanningDeveloperTodoResolver } },
+  { path: "developer/:planningid/user/:userid/todo/detail/:todoid", component: DetailPlanningDeveloperTodoComponent, resolve: { planningdevelopertodo: DetailPlanningDeveloperTodoResolver } },
+  { path: "developer/add", component: CreatePlanningComponent, resolve: { clients: ListClientResolver } },
+  { path: "developer/update/:id", component: UpdatePlanningComponent, resolve: { planning: DetailPlanningResolver, clients: ListClientResolver } },
 
   { path: "project", component: ListProjectComponent, resolve: { projects: ListProjectResolver } },
   { path: "project/detail/:id", component: DetailProjectComponent, resolve: { project: DetailProjectResolver } },
@@ -149,6 +153,7 @@ const routes: Routes = [
     ListPlanningResolver,
     DetailPlanningResolver,
 
+    DetailPlanningDeveloperTodoResolver,
     ListPlanningDeveloperTodoResolver,
 
     ListProjectResolver,

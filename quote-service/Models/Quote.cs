@@ -24,10 +24,13 @@ namespace QuoteService.Models
         [BsonElement("templatename")]
         public string Templatename { get; set; } = String.Empty;
 
-        public string[] Templatetodoid { get; set; } = new string[100];
+        [BsonElement("templatetodoid")]
+        public string[] Templatetodoid { get; set; } = new string[100]; 
 
+        [BsonElement("todosidoutoftemplate")]
         public string[] Todosidoutoftemplate { get; set; } = new string[100];
         
+        [BsonElement("todos")]
         public ICollection<Todo> todos { get; set; } = new List<Todo>();
 
         [BsonElement("status")]

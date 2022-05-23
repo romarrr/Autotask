@@ -13,8 +13,9 @@ export class ListPlanningDeveloperTodoResolver implements Resolve<Observable<Tod
   constructor(private planningDeveloperService: PlanningDeveloperService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Todo[]> { 
-    let id: any = route.params['id'];
-    return this.planningDeveloperService.getTodosByUserId(id);
+    let planningId: any = route.params['planningid'];
+    let userid: any = route.params['userid'];
+    return this.planningDeveloperService.getTodosByPlanningIdAndByUserId(planningId, userid);
   }
 
 }

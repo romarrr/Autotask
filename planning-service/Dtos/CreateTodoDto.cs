@@ -8,22 +8,30 @@ namespace PlanningService.Dtos
     public class CreateTodoDto
     {   
         [Required]
+        public string Originalid { get; set; } = String.Empty;
+
+        [Required]
+        public string Quoteid { get; set; } = String.Empty;
+
+        [Required]
         public string Name { get; set; } = String.Empty;
 
         [Required]
-        public string Experience { get; set; } = String.Empty;
+        public string Type { get; set; } = String.Empty;
 
         [Required]
         public string Description { get; set; } = String.Empty;
 
         [Required]
-        public string Time { get; set; } = String.Empty;
+        public int Time { get; set; }
 
         [Required]
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         [Required]
-        public string Specialization { get; set; } = String.Empty;
+        public string Skillid { get; set; } = String.Empty;
+
+        public Skill? skill { get; set; }
 
         [Required]
         public string Userid { get; set; } = String.Empty;

@@ -11,10 +11,6 @@ namespace SpecializationService.Profiles
             CreateMap<Specialization, ReadSpecializationDto>();
             CreateMap<CreateSpecializationDto, Specialization>();
             CreateMap<UpdateSpecializationDto, Specialization>();
-
-            // Partie RabbitMQ
-            CreateMap<Specialization, SpecializationUpdatedDto>();
-            CreateMap<Specialization, SpecializationUpdateAsyncDto>();
         }
     }
 }

@@ -6993,11 +6993,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\todo-service\\todo-service.csproj",
+      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\todo-service\\todo-service.csproj",
       "projectName": "todo-service",
-      "projectPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\todo-service\\todo-service.csproj",
+      "projectPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\todo-service\\todo-service.csproj",
       "packagesPath": "C:\\Users\\nicor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\todo-service\\obj\\",
+      "outputPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\todo-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicor\\AppData\\Roaming\\NuGet\\NuGet.Config"

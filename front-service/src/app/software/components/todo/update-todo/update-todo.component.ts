@@ -31,6 +31,8 @@ export class UpdateTodoComponent implements OnInit {
 
   submitted = false;
 
+  types = ["Front", "Back"];
+
   constructor(private todoService: TodoService, private router: Router, private toastrService: NbToastrService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

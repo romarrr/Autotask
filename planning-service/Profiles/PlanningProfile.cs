@@ -15,6 +15,7 @@ namespace PlanningService.Profiles
 
             // Todo
             CreateMap<CreateTodoDto, Todo>();
+            CreateMap<Todo, CreateTodoDto>();
         }
     }
 }

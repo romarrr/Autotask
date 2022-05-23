@@ -22,12 +22,6 @@ namespace PlanningService.Data
             return _context.planning.Find(c => c.Id == id).SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Todo>> GetTodosByPlanningNameAndByUserId(string name, string id) 
-        {
-            var planning = await _context.planning.Find(c => c.Name == name).SingleOrDefaultAsync();
-            return planning.todos.Where(todo => todo.Userid == id);
-        }
-
         public async Task CreatePlanning(Planning planning)
         {
             if(planning != null)
@@ -39,12 +33,39 @@ namespace PlanningService.Data
         public async Task<Planning> UpdatePlanningById(string id, Planning planning)
         {
             return await _context.planning.FindOneAndReplaceAsync(c => c.Id == id,
-                new Planning { Id = id, Name = planning.Name, todos = planning.todos, users = planning.users });
+                new Planning { Id = id, Name = planning.Name, Role = planning.Role, todos = planning.todos, users = planning.users });
         }
 
         public async Task DeletePlanningById(string id)
         {
             await _context.planning.DeleteOneAsync(c => c.Id == id);
+        }
+
+        // Todo 
+        public async Task<Todo> GetTodoById(string planningid, string userid, string todoid) 
+        {
+            var planning = await _context.planning.Find(c => c.Id == planningid).SingleOrDefaultAsync();
+            var getTodo = new Todo();
+            foreach(var todo in planning.todos)
+            {
+                if(todo.Id == todoid && todo.Userid == userid)
+                {
+                    getTodo = todo;
+                }
+            }
+            return getTodo;
+        }
+
+        public async Task<IEnumerable<Todo>> GetTodosByPlanningIdAndByUserId(string planningid, string id) 
+        {
+            var planning = await _context.planning.Find(c => c.Id == planningid).SingleOrDefaultAsync();
+            return planning.todos.Where(todo => todo.Userid == id);
+        }
+
+        public async Task<IEnumerable<Todo>> GetStartedTodos(string planningid, string id) 
+        {
+            var planning = await _context.planning.Find(c => c.Id == planningid).SingleOrDefaultAsync();
+            return planning.todos.Where(todo => todo.Status == "En cours");
         }
 
         // User
@@ -69,12 +90,5 @@ namespace PlanningService.Data
             }
             return usersSkilled;
         }
-
-        public async Task<User> UpdateUserById(string id, User user)
-        {
-            return await _context.user.FindOneAndReplaceAsync(c => c.Id == id,
-                new User { Id = id, Worktime = user.Worktime });
-        }
-
     }
 }

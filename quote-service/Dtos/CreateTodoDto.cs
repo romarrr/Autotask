@@ -20,7 +20,7 @@ namespace QuoteService.Dtos
         public string Time { get; set; } = String.Empty;
 
         [Required]
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         [Required]
         public string Skillid { get; set; } = String.Empty;

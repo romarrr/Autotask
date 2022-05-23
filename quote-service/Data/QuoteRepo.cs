@@ -27,6 +27,31 @@ namespace QuoteService.Data
             return await _context.quote.Find(c => c.Status == "Accepté").ToListAsync();
         }
 
+        public Task<Quote> GetQuoteAcceptedById(string id) 
+        {
+            return _context.quote.Find(c => c.Id == id && c.Status == "Accepté").SingleOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Quote>> GetQuotesInProgress() 
+        {
+            return await _context.quote.Find(c => c.Status == "Accepté - En cours de développement").ToListAsync();
+        }
+
+        public Task<Quote> GetQuoteInProgressById(string id) 
+        {
+            return _context.quote.Find(c => c.Id == id && c.Status == "Accepté - En cours de développement").SingleOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Quote>> GetQuotesFinished() 
+        {
+            return await _context.quote.Find(c => c.Status == "Terminé").ToListAsync();
+        }
+
+        public Task<Quote> GetQuoteFinishedById(string id) 
+        {
+            return _context.quote.Find(c => c.Id == id && c.Status == "Terminé").SingleOrDefaultAsync();
+        }
+
         public async Task CreateQuote(Quote Quote)
         {
             if(Quote != null)

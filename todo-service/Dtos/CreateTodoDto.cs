@@ -19,7 +19,7 @@ namespace TodoService.Dtos
         [Required]
         public string SkillId { get; set; } = String.Empty;
 
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         public string Logo { get; set; } = String.Empty;
     }

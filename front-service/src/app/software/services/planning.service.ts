@@ -10,7 +10,7 @@ import { PlanningTodo } from '../models/planningtodo';
 })
 export class PlanningService {
 
-  constructor(private route: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   getPlannings(): Observable<Planning[]>
   {
@@ -25,7 +25,7 @@ export class PlanningService {
 
   getPlanningByUserId(): Observable<Planning[]>
   {
-    var stringUrl = this.route.url;
+    var stringUrl = this.router.url;
     var id = stringUrl.split('/').pop();  
     return this.http.get<Planning[]>("https://localhost:2001/planning/user/" + id);
   }

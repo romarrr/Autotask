@@ -8,6 +8,7 @@
 
         <div class="text-center pt-4 pb-3">
             <h1><span class="text-uppercase name">{{ planning.name }}</span></h1>
+            <h3><span class="text-uppercase name">Planning de {{ planning.role }}</span></h3>
         </div>
 
         <div class="row justify-content-between px-5 mb-5">
@@ -16,7 +17,7 @@
                 <mat-expansion-panel hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title class="col-6">
-                           {{todo.name}}
+                           {{todo.name}} - {{ todo.status }}
                         </mat-panel-title>
                         <mat-panel-description class="col-6">
                             {{todo.user.lastname}} {{todo.user.firstname}} 

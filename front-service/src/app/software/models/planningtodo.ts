@@ -6,11 +6,11 @@ export interface PlanningTodo
     id: string,
     name: string, 
     type: string,
-    description: string
-    time: string
-    status: string
-    skillid: string
+    description: string,
+    time: string,
+    status: string,
+    skillid: string,
     skill: Skill,
-    userid: string
+    userid: string,
     user: User
 }

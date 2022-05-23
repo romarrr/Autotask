@@ -39,7 +39,7 @@ export class DetailPlanningComponent implements OnInit {
   }
 
   redirection() {
-    setTimeout(() => this.router.navigateByUrl("/planning"),1000);
+    setTimeout(() => this.router.navigateByUrl("/planning"),1500);
   }
   
   showDeletePlanningToast() {

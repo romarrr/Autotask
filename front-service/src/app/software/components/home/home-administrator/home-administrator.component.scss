@@ -1,0 +1,41 @@
+@use '../../../../../themes.scss' as *;
+
+h1, h2 {
+    font-family: nb-theme(font-family-primary);
+}
+
+.homecard { 
+    transition: all 0.2s ease;
+    background: nb-theme(background-mat-card);
+    cursor: pointer;
+}
+
+.homecard:hover {
+    transform: scale(1.1); 
+}
+
+.image {
+    width : 100px; 
+}
+
+.icon {
+    margin-bottom: -21px;
+    transform: translateY(-60%);
+    text-align: center
+}
+
+.title {
+    margin-top: -20px;
+}
+
+.number {
+    color: #8ebe44;
+}
+
+.twopoints {
+    color: #06a79c;
+}
+
+.definition {
+    color: #1f75b6;
+}

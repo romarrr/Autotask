@@ -10,14 +10,24 @@ export class PlanningDeveloperService {
 
   constructor(private http: HttpClient) { }
 
-  getTodosByUserId(id: string): Observable<Todo[]>
+  getTodosByPlanningIdAndByUserId(planningId: string, userid: string): Observable<Todo[]>
   { 
-    return this.http.get<Todo[]>("https://localhost:2001/planning/PlanningDev/todos/user/" + id);
+    return this.http.get<Todo[]>("https://localhost:2001/planning/" + planningId + "/todos/user/" + userid);
   }
 
-  getTodoById(id: string): Observable<Todo>
+  getTodoByIdByPlanningIdAndByUserId(planningId: string, userid: string, todoid: string): Observable<Todo>
   { 
-    let todoById = "https://localhost:2001/planning/PlanningDev/todo/" + id;
-    return this.http.get<Todo>(todoById);
+    let getTodo = "https://localhost:2001/planning/" + planningId + "/todo/user/" + userid + "/" + todoid;
+    return this.http.get<Todo>(getTodo);
+  }
+
+  startTodoById(planningid: string, userid: string, todoid: string, updateTodo: any): Observable<Todo>
+  { 
+    return this.http.put<Todo>("https://localhost:2001/planning/" + planningid + "/user/" + userid + "/start/todo/" + todoid, updateTodo);
+  }
+
+  finishTodoById(planningid: string, userid: string, todoid: string, updateTodo: any): Observable<Todo>
+  { 
+    return this.http.put<Todo>("https://localhost:2001/planning/" + planningid + "/user/" + userid + "/finish/todo/" + todoid, updateTodo);
   }
 }

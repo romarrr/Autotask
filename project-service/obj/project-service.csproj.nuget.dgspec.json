@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\project-service\\project-service.csproj": {}
+    "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\project-service\\project-service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\project-service\\project-service.csproj": {
+    "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\project-service\\project-service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\project-service\\project-service.csproj",
+        "projectUniqueName": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\project-service\\project-service.csproj",
         "projectName": "project-service",
-        "projectPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\project-service\\project-service.csproj",
+        "projectPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\project-service\\project-service.csproj",
         "packagesPath": "C:\\Users\\nicor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\project-service\\obj\\",
+        "outputPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\project-service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nicor\\AppData\\Roaming\\NuGet\\NuGet.Config"

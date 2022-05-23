@@ -31,6 +31,12 @@ namespace SkillService.Controllers
             return await _repository.GetSkillById(id);
         }
 
+        [HttpGet("{specializationname}/{experiencename}", Name = "GetSkillBySpecializationAndByExperience")]
+        public async Task<Skill> GetSkillBySpecializationAndByExperience(string specializationname, string experiencename)
+        {
+            return await _repository.GetSkillBySpecializationAndByExperience(specializationname, experiencename);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateSkill([FromBody] CreateSkillDto createSkill)
         {
@@ -50,6 +56,13 @@ namespace SkillService.Controllers
             return Ok();
         }
 
+        [HttpPut("{specializationname}/{experiencename}", Name = "UpdateSkillBySpecializationAndByExperience")]
+        public async Task<IActionResult> UpdateSkillBySpecializationAndByExperience(string specializationname, string experiencename, [FromBody] Skill skill)
+        {
+            await _repository.UpdateSkillBySpecializationAndByExperience(specializationname, experiencename, skill);
+            return Ok();
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSkillById(string id)
         {
@@ -57,6 +70,21 @@ namespace SkillService.Controllers
             if(skill != null)
             {
                 await _repository.DeleteSkillById(id);
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpDelete("{specializattionname}/{experiencename}", Name = "DeleteSkillBySpecializationAndByExperience")]
+        public async Task<IActionResult> DeleteSkillBySpecializationAndByExperience(string specializattionname, string experiencename)
+        {
+            var skill = _repository.GetSkillBySpecializationAndByExperience(specializattionname, experiencename);
+            if(skill != null)
+            {
+                await _repository.DeleteSkillBySpecializationAndByExperience(specializattionname, experiencename);
                 return Ok();
             }
             else

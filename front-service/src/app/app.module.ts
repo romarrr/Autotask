@@ -36,7 +36,6 @@ import { MatTableModule } from '@angular/material/table';
 
 import { AboutComponent } from './software/components/about/about.component';
 import { FooterComponent } from './template/footer/footer.component';
-import { HomeComponent } from './software/components/home/home.component';
 import { LoginComponent } from './software/components/login/login.component';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { NavbarUserComponent } from './template/navbar-user/navbar-user.component';
@@ -93,6 +92,8 @@ import { ListUserFilterPipe } from './software/filters/user-filter';
 
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeDeveloperComponent } from './software/components/home/home-developer/home-developer.component';
+import { HomeAdministratorComponent } from './software/components/home/home-administrator/home-administrator.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -149,12 +150,13 @@ registerLocaleData(localeFr, 'fr');
 
     AboutComponent,
     FooterComponent,
-    HomeComponent,
     LoginComponent,
     NavbarComponent,
     NavbarUserComponent,
     ListPlanningDeveloperTodoComponent,
     DetailPlanningDeveloperTodoComponent,
+    HomeDeveloperComponent,
+    HomeAdministratorComponent,
       
   ],
   imports: [

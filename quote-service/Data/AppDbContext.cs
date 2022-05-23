@@ -17,6 +17,8 @@ namespace QuoteService.Data
         public IMongoCollection<Template> template => _db.GetCollection<Template>("template");
 
         public IMongoCollection<Todo> todo => _db.GetCollection<Todo>("todo");
+
+        public IMongoCollection<Planning> planning => _db.GetCollection<Planning>("planning");
         
     }
 }

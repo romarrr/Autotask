@@ -8,6 +8,9 @@ namespace PlanningService.Dtos
         [Required]
         public string Name { get; set; } = String.Empty;
 
+        [Required]
+        public string Role { get; set; } = String.Empty;
+
         public ICollection<User> users { get; set; } = new List<User>();
     }
 }

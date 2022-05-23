@@ -9,6 +9,9 @@ namespace PlanningService.Dtos
         public string Name { get; set; } = String.Empty;
 
         [Required]
+        public string Role { get; set; } = String.Empty;
+
+        [Required]
         public ICollection<Todo> todos { get; set; } = new List<Todo>();
 
         [Required]

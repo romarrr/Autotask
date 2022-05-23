@@ -24,7 +24,7 @@ namespace TodoService.Dtos
         public Skill? skill { get; set; }
 
         [Required]
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         [Required]
         public string Logo { get; set; } = String.Empty;

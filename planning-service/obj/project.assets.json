@@ -790,7 +790,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "RabbitMQ.Client/6.2.2": {
+      "RabbitMQ.Client/6.3.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.4",
@@ -3182,22 +3182,19 @@
         "tools/install.ps1"
       ]
     },
-    "RabbitMQ.Client/6.2.2": {
-      "sha512": "+tJSgE+rQXgLvOxWvOxdZ0+No1EMa86+puZuNlCb4cNryHw2PY2Xiw/y2dz/WWdeJQp74Y2UnNXPkuLiYpvn+A==",
+    "RabbitMQ.Client/6.3.0": {
+      "sha512": "aKDH8lyNIRkouDvJJD3xd6222z6qCK8+Lyb/lRQRO1QxN7hsTgPWtkezMmXmA7t1NsDLUwIWEJj8xYQtMt0tnQ==",
       "type": "package",
-      "path": "rabbitmq.client/6.2.2",
+      "path": "rabbitmq.client/6.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
         "icon.png",
         "lib/net461/RabbitMQ.Client.dll",
-        "lib/net461/RabbitMQ.Client.pdb",
         "lib/net461/RabbitMQ.Client.xml",
         "lib/netstandard2.0/RabbitMQ.Client.dll",
-        "lib/netstandard2.0/RabbitMQ.Client.pdb",
         "lib/netstandard2.0/RabbitMQ.Client.xml",
-        "rabbitmq.client.6.2.2.nupkg.sha512",
+        "rabbitmq.client.6.3.0.nupkg.sha512",
         "rabbitmq.client.nuspec"
       ]
     },
@@ -6983,7 +6980,7 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "MongoDB.Driver >= 2.14.1",
-      "RabbitMQ.Client >= 6.2.2",
+      "RabbitMQ.Client >= 6.3.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6993,11 +6990,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\planning-service\\planning-service.csproj",
+      "projectUniqueName": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\planning-service\\planning-service.csproj",
       "projectName": "planning-service",
-      "projectPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\planning-service\\planning-service.csproj",
+      "projectPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\planning-service\\planning-service.csproj",
       "packagesPath": "C:\\Users\\nicor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\planning-service\\obj\\",
+      "outputPath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\planning-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7056,7 +7053,7 @@
           },
           "RabbitMQ.Client": {
             "target": "Package",
-            "version": "[6.2.2, )"
+            "version": "[6.3.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

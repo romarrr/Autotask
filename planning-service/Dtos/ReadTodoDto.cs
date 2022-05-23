@@ -4,6 +4,8 @@ namespace PlanningService.Dtos
     {
         public string Id { get; set; } = String.Empty;
 
+        public string Quoteid { get; set; } = String.Empty;
+
         public string Name { get; set; } = String.Empty;
 
         public string Experience { get; set; } = String.Empty;
@@ -12,7 +14,7 @@ namespace PlanningService.Dtos
 
         public string Time { get; set; } = String.Empty;
 
-        public string Status { get; set; } = "A Faire";
+        public string Status { get; set; } = String.Empty;
 
         public string Specialization { get; set; } = String.Empty;
 

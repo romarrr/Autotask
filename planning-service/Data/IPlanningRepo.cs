@@ -12,7 +12,9 @@ namespace PlanningService.Data
         Task DeletePlanningById(string id);
 
         // Todo
-        Task<IEnumerable<Todo>> GetTodosByPlanningNameAndByUserId(string name, string id);
+        Task<Todo> GetTodoById(string planningid, string userid, string id);
+        Task<IEnumerable<Todo>> GetTodosByPlanningIdAndByUserId(string planningid, string id);
+        Task<IEnumerable<Todo>> GetStartedTodos(string planningid, string id);
 
         // User 
         Task<IEnumerable<User>> GetAllUsersByRole(string role);

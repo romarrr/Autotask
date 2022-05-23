@@ -28,6 +28,8 @@ export class CreateTodoComponent implements OnInit {
 
   selected!: string;
 
+  types = ["Front", "Back"];
+
   constructor(
     private router: Router,
     private todoService: TodoService, 

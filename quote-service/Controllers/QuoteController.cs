@@ -41,6 +41,36 @@ namespace QuoteService.Controllers
             return await _repository.GetQuotesAccepted();
         }
 
+        [HttpGet("accepted/{id}", Name = "GetQuoteAcceptedById")]
+        public async Task<Quote> GetQuoteAcceptedById(string id)
+        {
+            return await _repository.GetQuoteAcceptedById(id);
+        }
+
+        [HttpGet("inprogress", Name = "GetQuotesInProgress")]
+        public async Task<IEnumerable<Quote>> GetQuotesInProgress()
+        {
+            return await _repository.GetQuotesInProgress();
+        }
+
+        [HttpGet("inprogress/{id}", Name = "GetQuoteInProgressById")]
+        public async Task<Quote> GetQuoteInProgressById(string id)
+        {
+            return await _repository.GetQuoteInProgressById(id);
+        }
+
+        [HttpGet("finished", Name = "GetQuotesFinished")]
+        public async Task<IEnumerable<Quote>> GetQuotesFinished()
+        {
+            return await _repository.GetQuotesFinished();
+        }
+
+        [HttpGet("finished/{id}", Name = "GetQuoteFinishedById")]
+        public async Task<Quote> GetQuoteFinishedById(string id)
+        {
+            return await _repository.GetQuoteFinishedById(id);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateQuote([FromBody] CreateQuoteDto createQuote)
         {
@@ -48,7 +78,7 @@ namespace QuoteService.Controllers
 
             // Récupérer les infos du client
             var getClient = await _httpClient.GetAsync("http://localhost:1000/client/" + quoteModel.Clientid); 
-       
+
             var clientReadDto = JsonConvert.DeserializeObject<ReadClientDto>(
                 await getClient.Content.ReadAsStringAsync()
                 );
@@ -64,7 +94,7 @@ namespace QuoteService.Controllers
             // Création d'une nouvelle liste de tâches qui va contenir les tâches du template
             var templateTodos = new List<Todo>();
 
-            // Récupérer les tâches du template
+            // Récupérer les tâches du template 
             var newTemplateTodo = new Todo();
 
             var getTemplate = await _httpClient.GetAsync("http://localhost:6000/template/" + quoteModel.Templateid);
@@ -260,8 +290,8 @@ namespace QuoteService.Controllers
             }
         }
 
-        [HttpPut("valid/{id}", Name = "ValidationQuote")]
-        public async Task<IActionResult> ValidationQuote(string id)
+        [HttpPut("valid/{id}", Name = "ValidationQuoteById")]
+        public async Task<IActionResult> ValidationQuoteById(string id)
         {
             var quote = await _repository.GetQuoteById(id);
     
@@ -274,6 +304,44 @@ namespace QuoteService.Controllers
                 quote.Status = "Accepté";
 
                 await _repository.UpdateQuoteById(id, quote);
+                
+                return Ok();
+            }
+        }
+
+        [HttpPut("accepted/{id}", Name = "UpdateQuoteAcceptedById")]
+        public async Task<IActionResult> UpdateQuoteAcceptedById(string id, [FromBody] Quote quote)
+        {
+            var quoteModel = await _repository.GetQuoteById(id);
+    
+            if(quoteModel == null)
+            {
+                return NotFound("Aucun devis n'a été trouvé.");
+            }
+            else
+            {      
+                quoteModel.Status = "Accepté - En cours de développement";
+
+                await _repository.UpdateQuoteById(id, quoteModel);
+                
+                return Ok();
+            }
+        }
+
+        [HttpPut("finished/{id}", Name = "UpdateQuoteFinishedById")]
+        public async Task<IActionResult> UpdateQuoteFinishedById(string id, [FromBody] Quote quote)
+        {
+            var quoteModel = await _repository.GetQuoteById(id);
+    
+            if(quoteModel == null)
+            {
+                return NotFound("Aucun devis n'a été trouvé.");
+            }
+            else
+            {      
+                quoteModel.Status = "Terminé";
+
+                await _repository.UpdateQuoteById(id, quoteModel);
                 
                 return Ok();
             }

@@ -22,6 +22,11 @@ namespace SkillService.Data
             return _context.skill.Find(c => c.Id == id).SingleOrDefaultAsync();
         }
 
+        public Task<Skill> GetSkillBySpecializationAndByExperience(string specializationname, string experiencename) 
+        {
+            return _context.skill.Find(c => c.Specializationname == specializationname && c.Experiencename == experiencename).SingleOrDefaultAsync();
+        }
+
         public async Task CreateSkill(Skill skill)
         {
             if(skill != null)
@@ -36,9 +41,20 @@ namespace SkillService.Data
                 new Skill { Id = id, Specializationname = skill.Specializationname, Experiencename = skill.Experiencename });
         }
 
+        public async Task<Skill> UpdateSkillBySpecializationAndByExperience(string specializationname, string experiencename, Skill skill)
+        {
+            return await _context.skill.FindOneAndReplaceAsync(c => c.Specializationname == specializationname && c.Experiencename == experiencename,
+                new Skill { Id = skill.Id, Specializationname = skill.Specializationname, Experiencename = skill.Experiencename });
+        }
+
         public async Task DeleteSkillById(string id)
         {
             await _context.skill.DeleteOneAsync(c => c.Id == id);
+        }
+
+        public async Task DeleteSkillBySpecializationAndByExperience(string specializationname, string experiencename)
+        {
+            await _context.skill.DeleteOneAsync(c => c.Specializationname == specializationname && c.Experiencename == experiencename);
         }
 
     }

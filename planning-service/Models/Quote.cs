@@ -24,14 +24,20 @@ namespace PlanningService.Models
         [BsonElement("templatename")]
         public string Templatename { get; set; } = String.Empty;
 
+        [BsonElement("templatetodoid")]
         public string[] Templatetodoid { get; set; } = new string[100];
 
+        [BsonElement("todosidoutoftemplate")]
         public string[] Todosidoutoftemplate { get; set; } = new string[100];
         
+        [BsonElement("todos")]
         public ICollection<Todo> todos { get; set; } = new List<Todo>();
 
         [BsonElement("status")]
         public string Status { get; set; } = String.Empty;
+
+        [BsonElement("logo")]
+        public string Logo { get; set; } = String.Empty;
 
     }
 }

@@ -5,6 +5,7 @@ import { Todo } from "./todo";
 export interface Quote 
 {
     id: string,
+    quoteid: string,
     name: string,
     status: string,
     templateid: string,

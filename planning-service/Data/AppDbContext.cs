@@ -15,5 +15,7 @@ namespace PlanningService.Data
         public IMongoCollection<Planning> planning => _db.GetCollection<Planning>("planning");
 
         public IMongoCollection<User> user => _db.GetCollection<User>("user");
+
+        public IMongoCollection<Quote> quote => _db.GetCollection<Quote>("quote");
     }
 }

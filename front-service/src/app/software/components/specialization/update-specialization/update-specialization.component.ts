@@ -57,7 +57,7 @@ export class UpdateSpecializationComponent implements OnInit {
   }
 
   redirection() {
-    setTimeout(() => this.router.navigateByUrl("/specialization"), 1000);
+    setTimeout(() => this.router.navigateByUrl("/specialization"), 1500);
   }
 
   showToast() {

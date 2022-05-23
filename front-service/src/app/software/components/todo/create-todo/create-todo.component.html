@@ -21,7 +21,11 @@
 
                 <mat-form-field appearance="standard" class="form-group col-12">
                     <mat-label>Type</mat-label>
-                    <input matInput formControlName="type" type="text" class="form-control">
+                    <mat-select formControlName="type">  
+                        <mat-option *ngFor="let type of types" [value]="type">
+                            <span class="text-uppercase">{{ type }}</span>
+                        </mat-option>      
+                    </mat-select>
                 </mat-form-field>
 
                 <mat-error class="text-end" *ngIf="submitted && formControls['type'].errors">

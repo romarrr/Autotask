@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4XilzowcR/F/p8gioapi25XOKuq0egIEVetWlrR4uS1UdQoGm09TpnuHaesmisTOVi5DsiNfxG+4q2WmdN7eaQ==",
+  "dgSpecHash": "Q4jXRalcqHmbn9XJDuepBZKvEYhxdhbU0kyMnr6Cn8A3M972N8eFhvsbNE+WRVvDB0ZiZkHg8CKztqiRVqkjZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\template-service\\template-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\template-service\\template-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",

@@ -4,6 +4,7 @@ using SpecializationService.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace SpecializationService.Controllers
 {
@@ -46,32 +47,33 @@ namespace SpecializationService.Controllers
             await _repository.CreateSpecialization(SpecializationModel);
             var readSpecializationDto = _mapper.Map<ReadSpecializationDto>(SpecializationModel);
 
+            // En plus de créer la spécialisation, création de 3 compétences avec un niveau différent dans le service Skill
             for(var i=0; i<=2; i++)
             {
-                var skillJunior = new Skill();
+                var skill = new Skill();
                 if(i==0)
                 {
-                    skillJunior.Experiencename = "Junior";
+                    skill.Experiencename = "Junior";
                 }
                 else if(i==1)
                 {
-                    skillJunior.Experiencename = "Confirmé";
+                    skill.Experiencename = "Confirmé";
                 }
                 else if(i==2)
                 {
-                    skillJunior.Experiencename = "Sénior";
+                    skill.Experiencename = "Sénior";
                 }
                 
-                skillJunior.Specializationname = readSpecializationDto.Name;
+                skill.Specializationname = readSpecializationDto.Name;
 
-                var skillJuniorContent = new StringContent(
-                    Newtonsoft.Json.JsonConvert.SerializeObject(skillJunior),
+                var skillContent = new StringContent(
+                    Newtonsoft.Json.JsonConvert.SerializeObject(skill),
                     Encoding.UTF8,
                     "application/json");
-            
-                var postSkillJunior = await _httpClient.PostAsync("http://localhost:9000/skill/", skillJuniorContent); 
 
-                if(postSkillJunior.IsSuccessStatusCode)
+                var postSkill = await _httpClient.PostAsync("http://localhost:9000/skill/", skillContent); 
+
+                if(postSkill.IsSuccessStatusCode)
                 {
                     // Si la réponse http est un succés on envoie un message 
                     Console.WriteLine("Le skill a été posté vers SkillService.");
@@ -79,7 +81,7 @@ namespace SpecializationService.Controllers
                 else 
                 {
                     // Si la réponse http est un échec on envoie un message
-                    Console.WriteLine("ERROR : Le skill n'a pas été posté vers SkillService.");
+                    Console.WriteLine("ERREUR : Le skill n'a pas été posté vers SkillService.");
                 }
             }   
 
@@ -89,16 +91,101 @@ namespace SpecializationService.Controllers
         [HttpPut("{id}", Name = "UpdateSpecializationById")]
         public async Task<IActionResult> UpdateSpecializationById(string id, [FromBody] Specialization specialization)
         {
+            var spec = _mapper.Map<Specialization>(specialization);
+            
+            var specializationModel = await _repository.GetSpecializationById(id);
+            var specializationMap = _mapper.Map<Specialization>(specializationModel);
+
+            for(var i=0; i<=2; i++)
+            {
+                var skill = new Skill();
+                
+                skill.Specializationname = specializationMap.Name;
+
+                if(i==0)
+                {
+                    skill.Experiencename = "Junior";
+                }
+                else if(i==1)
+                {
+                    skill.Experiencename = "Confirmé";
+                }
+                else if(i==2)
+                {
+                    skill.Experiencename = "Sénior";
+                }
+
+                var getSkill = await _httpClient.GetAsync("http://localhost:9000/skill/" + skill.Specializationname + "/" + skill.Experiencename); 
+                
+                var deserializedSkill = JsonConvert.DeserializeObject<Skill>(
+                    await getSkill.Content.ReadAsStringAsync());
+                
+                var getSkillMap = _mapper.Map<Skill>(deserializedSkill);
+
+                var updateSkill = new Skill();
+                updateSkill.Id = getSkillMap.Id;
+                updateSkill.Specializationname = spec.Name;
+                updateSkill.Experiencename = skill.Experiencename;
+
+                var skillContent = new StringContent(
+                    Newtonsoft.Json.JsonConvert.SerializeObject(updateSkill),
+                    Encoding.UTF8,
+                    "application/json");
+
+                var putSkill = await _httpClient.PutAsync("http://localhost:9000/skill/" + skill.Specializationname + "/" + skill.Experiencename, skillContent); 
+
+                if(putSkill.IsSuccessStatusCode)
+                {
+                    // Si la réponse http est un succés on envoie un message 
+                    Console.WriteLine("Le skill a été modifié dans SkillService.");
+                }
+                else 
+                {
+                    // Si la réponse http est un échec on envoie un message
+                    Console.WriteLine("ERREUR : Le skill n'a pas été modifié dans SkillService.");
+                }
+            }   
+
             await _repository.UpdateSpecializationById(id, specialization);
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "DeleteSpecializationById")]
         public async Task<IActionResult> DeleteSpecializationById(string id)
         {
-            var Specialization = _repository.GetSpecializationById(id);
-            if(Specialization != null)
+            var specialization = await _repository.GetSpecializationById(id);
+            var specializationMap = _mapper.Map<Specialization>(specialization);
+        
+            if(specialization != null)
             {
+                // Permet de supprimer les Skills correspondant dans le service Skill
+                for(var i=0; i<=2; i++)
+                {
+                    var skill = new Skill();
+                    if(i==0)
+                    {
+                        skill.Experiencename = "Junior";
+                    }
+                    else if(i==1)
+                    {
+                        skill.Experiencename = "Confirmé";
+                    }
+                    else if(i==2)
+                    {
+                        skill.Experiencename = "Sénior";
+                    }
+
+                    var deleteSkill = await _httpClient.DeleteAsync("http://localhost:9000/skill/" + specializationMap.Name + "/" + skill.Experiencename); 
+
+                    if(deleteSkill.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine("Le skill a été supprimé de SkillService.");
+                    }
+                    else 
+                    {
+                        Console.WriteLine("ERREUR : Le skill n'a pas été supprimé de SkillService.");
+                    }
+                }
                 await _repository.DeleteSpecializationById(id);
                 return Ok();
             }

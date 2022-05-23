@@ -15,12 +15,14 @@ export class CreatePlanningComponent implements OnInit {
 
   submitted = false;
 
-  roles = ["Développeur", "Commerical", "Administrateur"];
+  roles = ["Développeur", "Commercial", "Administrateur"];
 
-  constructor(private router: Router, 
+  constructor(
+    private router: Router, 
     private planningService: PlanningService, 
     private route: ActivatedRoute, 
-    private toastrService: NbToastrService) { }
+    private toastrService: NbToastrService
+  ) { }
 
   ngOnInit(): void {
     this.newPlanning = this.createFormGroup();

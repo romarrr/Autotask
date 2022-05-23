@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JXnM1n1LCacrp8l5QiagrEUsj19SmILaNosRQZIpDTb8G5MssARh20pTYI937kElZcBppO/d/HfSyQIf7anHmw==",
+  "dgSpecHash": "qVK3k5bnybGSnaZqbbK0ymPQ126EEMoazKFl3ly0UBRXmh1GY+la31CeAQBStvMKBcVHluji6Nepdemf80XQUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\planning-service\\planning-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\planning-service\\planning-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",
@@ -56,7 +56,7 @@
     "C:\\Users\\nicor\\.nuget\\packages\\mongodb.driver.core\\2.14.1\\mongodb.driver.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
-    "C:\\Users\\nicor\\.nuget\\packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "C:\\Users\\nicor\\.nuget\\packages\\rabbitmq.client\\6.3.0\\rabbitmq.client.6.3.0.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",

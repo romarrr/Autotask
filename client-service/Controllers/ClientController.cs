@@ -48,6 +48,10 @@ namespace ClientService.Controllers
         [HttpPut("{id}", Name = "UpdateClientById")]
         public async Task<IActionResult> UpdateClientById(string id, [FromBody] Client client)
         {
+            if(client.Logo == "")
+            {
+                client.Logo = "https://iconarchive.com/download/i18421/iconshock/free-folder/folder-customer.ico";
+            }
             await _repository.UpdateClientById(id, client);
             return Ok();
         }
