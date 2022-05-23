@@ -1,5 +1,7 @@
 ###AUTOTASK README
 
+Note : ArchiveService NON FONCTIONNEL
+
 
 1 - ouvrir le dossier dans vscode
 
@@ -8,7 +10,7 @@
 ![Notre Port](https://i.goopics.net/4xri3o.png)
 
 3 - dans chaque terminal accédez aux différents services 
-(commande cd - ex: dans le terminal pour le client-service accédez à .../autotask/client-service)
+(commande cd - ex: dans le terminal pour le client-service accédez à votredossier/autotask/client-service)
 
 4 - tapez "dotnet watch run" dans tous les terminaux  - sauf front-service - pour lancer les services 
 
