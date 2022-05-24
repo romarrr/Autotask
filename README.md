@@ -1,11 +1,8 @@
 ###AUTOTASK README
 
-Note : ArchiveService NON FONCTIONNEL
+1 - ouvrez vscode, ouvrez un terminal et faîtes git clone https://github.com/romarrr/Autotask.git
 
-
-1 - ouvrir le dossier dans vscode
-
-2 - dans vscode ouvrir un terminal par service (10)
+2 - ouvrir un terminal par service (10)
 
 ![Notre Port](https://i.goopics.net/4xri3o.png)
 
