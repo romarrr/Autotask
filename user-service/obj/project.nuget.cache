@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KggQ1Nw8GfHlj7XRp9gI2ZZE9OmXHADyQ07FvVwqoSYiwoNgNU/4jgveNFyLECrDT/54nGRoriRtngjqtacVnA==",
+  "dgSpecHash": "L88n1F1syE2LY6u0MMV1klpmZ49Ppe2wMjHOuzvQSwB9YmSX4klSD3WlBrJjEAS/kGAQGtlTLW22PhHCLBw6YQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\user-service\\user-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\user-service\\user-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",

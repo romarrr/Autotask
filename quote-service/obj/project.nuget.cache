@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a1H6fepsfmN32y3yP70nn39jXwPz2JK640lbTAc7b0FFOpX4Idux27iN28aSYlnW1eeVYWjj7YzWi2zFp6AdhQ==",
+  "dgSpecHash": "r5lEw51ecZVElqJcCDu1M/F4jioEqMZliWR0nCG28B5jLoa1ypcOEF0TAQkDJfyThVpTy2JiqVnBIxaXoit4Zg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nicor\\Bureau\\ProjetAutoTask\\quote-service\\quote-service.csproj",
+  "projectFilePath": "C:\\Users\\nicor\\Bureau\\AutoTaskProject\\Autotask\\quote-service\\quote-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nicor\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
     "C:\\Users\\nicor\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\5.0.0\\automapper.extensions.microsoft.dependencyinjection.5.0.0.nupkg.sha512",
